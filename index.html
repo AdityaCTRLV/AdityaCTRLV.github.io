@@ -1704,8 +1704,8 @@ img{max-width:100%}
     <div class="sm-head">
       <div class="avatar" id="smAvatar"></div>
       <div>
-        <div class="who">Aditya</div>
-        <div class="role">Product &amp; Web Designer</div>
+        <div class="who">Aditya Mondal</div>
+        <div class="role">Product Designer</div>
       </div>
     </div>
     <div class="sm-cols">
@@ -1766,14 +1766,14 @@ img{max-width:100%}
           <span class="mark" id="wlMark"></span>
           <span class="word">Aditya<sup>XP</sup></span>
         </div>
-        <div class="wl-tag">Product &amp; Web Designer</div>
+        <div class="wl-tag">Product Designer</div>
         <div class="wl-prompt">To begin, click on Aditya to log in</div>
       </div>
       <div class="wl-div"></div>
       <div class="wl-right">
         <button class="wl-tile" type="button" id="wlTile">
           <span class="pic" id="wlUser"></span>
-          <span class="who"><b>Aditya</b><i>Product &amp; Web Designer</i></span>
+          <span class="who"><b>Aditya Mondal</b><i>Product Designer</i></span>
         </button>
       </div>
     </div>
@@ -3247,14 +3247,16 @@ function stopSaver() { saverOn = false; cancelAnimationFrame(saverRaf); $('#save
    CONTENT — edit this block to make the desktop yours.
    ======================================================================= */
 const ME = {
-  name : 'Aditya',
-  role : 'Product & Web Designer',
+  name : 'Aditya Mondal',
+  role : 'Product Designer',
   place: 'India · working with teams in Europe and the US',
-  email: 'envatoforever@gmail.com',
+  email: 'aditya1702mondal@gmail.com',
+  phone: '+91-8360009118',
   links: {
-    linkedin : 'https://www.linkedin.com/',
+    linkedin : 'https://www.linkedin.com/in/adityamondal1/',
     github   : 'https://github.com/',
-    instagram: 'https://www.instagram.com/'
+    instagram: 'https://www.instagram.com/',
+    framer   : 'https://aditya-design.framer.ai/'
   }
 };
 
@@ -3262,88 +3264,6 @@ const ME = {
 const T = {
   base: (bg, inner) => `<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <rect width="320" height="180" fill="${bg}"/>${inner}</svg>`,
-  pageflow: () => T.base('#111827', `
-    <rect x="0" y="0" width="320" height="18" fill="#1f2937"/>
-    <circle cx="10" cy="9" r="3" fill="#ef4444"/><circle cx="20" cy="9" r="3" fill="#f59e0b"/><circle cx="30" cy="9" r="3" fill="#22c55e"/>
-    <rect x="0" y="18" width="62" height="162" fill="#1b2433"/>
-    ${[0,1,2,3,4,5].map(i => `<rect x="8" y="${28 + i * 15}" width="46" height="8" rx="2" fill="#31405a"/>`).join('')}
-    <rect x="72" y="28" width="180" height="72" rx="4" fill="#243348" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4 3"/>
-    <rect x="84" y="40" width="90" height="10" rx="2" fill="#60a5fa"/>
-    <rect x="84" y="56" width="140" height="6" rx="2" fill="#33445e"/>
-    <rect x="84" y="66" width="120" height="6" rx="2" fill="#33445e"/>
-    <rect x="84" y="80" width="52" height="12" rx="6" fill="#3b82f6"/>
-    <rect x="72" y="110" width="86" height="58" rx="4" fill="#1e293b"/>
-    <rect x="166" y="110" width="86" height="58" rx="4" fill="#1e293b"/>
-    <rect x="262" y="28" width="50" height="140" rx="4" fill="#1b2433"/>
-    ${[0,1,2,3].map(i => `<rect x="270" y="${38 + i * 22}" width="34" height="12" rx="3" fill="#31405a"/>`).join('')}`),
-  accurl: () => T.base('#0b1a2b', `
-    <rect x="0" y="0" width="320" height="34" fill="#0f2338"/>
-    <rect x="16" y="13" width="54" height="9" rx="2" fill="#f97316"/>
-    ${[0,1,2,3].map(i => `<rect x="${160 + i * 38}" y="15" width="28" height="5" rx="2" fill="#38506b"/>`).join('')}
-    <path d="M0 34h320v90H0Z" fill="#12283f"/>
-    <path d="M30 108 L86 62 L128 96 L182 52 L246 92 L300 60" stroke="#f97316" stroke-width="3" fill="none"/>
-    <rect x="18" y="48" width="110" height="11" rx="3" fill="#e2e8f0"/>
-    <rect x="18" y="65" width="150" height="6" rx="2" fill="#4a6485"/>
-    <rect x="18" y="76" width="126" height="6" rx="2" fill="#4a6485"/>
-    ${[0,1,2].map(i => `<rect x="${18 + i * 98}" y="132" width="86" height="34" rx="4" fill="#173553"/>`).join('')}`),
-  auradata: () => T.base('#0d1117', `
-    <rect x="0" y="0" width="320" height="26" fill="#141b25"/>
-    <circle cx="18" cy="13" r="6" fill="#22d3ee"/>
-    <rect x="30" y="9" width="46" height="8" rx="2" fill="#1f2b3a"/>
-    ${[0,1,2,3].map(i => `<rect x="${14 + i * 76}" y="38" width="66" height="42" rx="5" fill="#161f2b" stroke="#1f2b3a"/>`).join('')}
-    ${[0,1,2,3].map(i => `<rect x="${22 + i * 76}" y="46" width="30" height="6" rx="2" fill="#22d3ee" opacity="${.4 + i * .18}"/>`).join('')}
-    ${[0,1,2,3].map(i => `<rect x="${22 + i * 76}" y="58" width="46" height="12" rx="2" fill="#2a3a4d"/>`).join('')}
-    <rect x="14" y="90" width="180" height="76" rx="5" fill="#161f2b"/>
-    <polyline points="26,150 52,132 78,140 104,112 130,124 156,100 182,110" fill="none" stroke="#22d3ee" stroke-width="2.5"/>
-    <rect x="204" y="90" width="102" height="76" rx="5" fill="#161f2b"/>
-    ${[0,1,2,3,4].map(i => `<rect x="214" y="${100 + i * 13}" width="${76 - i * 12}" height="7" rx="2" fill="#2a3a4d"/>`).join('')}`),
-  betterment: () => T.base('#f4f6fb', `
-    <rect x="112" y="10" width="96" height="160" rx="14" fill="#0f172a"/>
-    <rect x="118" y="20" width="84" height="140" rx="8" fill="#fff"/>
-    <rect x="126" y="30" width="40" height="7" rx="2" fill="#94a3b8"/>
-    <rect x="126" y="42" width="62" height="14" rx="3" fill="#0f172a"/>
-    <path d="M126 106 L146 88 L162 96 L182 72 L194 82" fill="none" stroke="#16a34a" stroke-width="2.5"/>
-    <rect x="126" y="64" width="68" height="30" rx="5" fill="#eef7f0"/>
-    ${[0,1,2].map(i => `<rect x="126" y="${118 + i * 14}" width="68" height="10" rx="3" fill="#eef2f7"/>`).join('')}
-    <circle cx="42" cy="52" r="26" fill="#dbeafe"/><circle cx="272" cy="128" r="34" fill="#dcfce7"/>
-    <rect x="18" y="98" width="72" height="8" rx="3" fill="#cbd5e1"/><rect x="18" y="112" width="52" height="8" rx="3" fill="#cbd5e1"/>`),
-  kris: () => T.base('#120d24', `
-    <rect x="0" y="0" width="86" height="180" fill="#1a1233"/>
-    ${[0,1,2,3,4].map(i => `<rect x="12" y="${20 + i * 20}" width="62" height="10" rx="4" fill="#2c2050"/>`).join('')}
-    <rect x="100" y="20" width="150" height="30" rx="10" fill="#241a47"/>
-    <rect x="110" y="30" width="94" height="9" rx="4" fill="#4b3a80"/>
-    <rect x="140" y="60" width="166" height="42" rx="10" fill="#7c3aed"/>
-    <rect x="152" y="72" width="120" height="8" rx="4" fill="#c4b5fd"/>
-    <rect x="152" y="84" width="88" height="7" rx="3" fill="#a78bfa"/>
-    <rect x="100" y="112" width="140" height="34" rx="10" fill="#241a47"/>
-    <circle cx="118" cy="129" r="7" fill="#22d3ee"/>
-    <rect x="132" y="124" width="90" height="8" rx="4" fill="#4b3a80"/>
-    <rect x="100" y="156" width="206" height="14" rx="7" fill="#1e1640"/>`),
-  rakuten: () => T.base('#fff', `
-    <rect x="0" y="0" width="320" height="30" fill="#bf0000"/>
-    <rect x="14" y="11" width="56" height="9" rx="2" fill="#fff"/>
-    <rect x="0" y="30" width="70" height="150" fill="#f7f7f8"/>
-    ${[0,1,2,3,4,5].map(i => `<rect x="10" y="${42 + i * 17}" width="50" height="8" rx="2" fill="#e2e2e6"/>`).join('')}
-    <rect x="82" y="42" width="66" height="40" rx="4" fill="#fdecec"/>
-    <rect x="158" y="42" width="66" height="40" rx="4" fill="#eef4ff"/>
-    <rect x="234" y="42" width="66" height="40" rx="4" fill="#eefaf0"/>
-    <rect x="82" y="94" width="218" height="12" fill="#f1f1f4"/>
-    ${[0,1,2,3,4].map(i => `<g><rect x="82" y="${110 + i * 13}" width="218" height="10" fill="${i % 2 ? '#fafafb' : '#fff'}"/>
-      <rect x="90" y="${112 + i * 13}" width="52" height="6" rx="2" fill="#d8d8de"/>
-      <rect x="160" y="${112 + i * 13}" width="34" height="6" rx="2" fill="#d8d8de"/>
-      <rect x="220" y="${112 + i * 13}" width="60" height="6" rx="2" fill="${i === 1 ? '#bf0000' : '#d8d8de'}" opacity="${i === 1 ? .6 : 1}"/></g>`).join('')}`),
-  paycrest: () => T.base('#f6f8fa', `
-    <rect x="0" y="0" width="320" height="30" fill="#0f766e"/>
-    <rect x="14" y="11" width="52" height="9" rx="2" fill="#99f6e4"/>
-    <circle cx="300" cy="15" r="8" fill="#5eead4"/>
-    ${[0,1,2].map(i => `<rect x="${14 + i * 100}" y="44" width="88" height="44" rx="6" fill="#fff" stroke="#e3e8ee"/>`).join('')}
-    ${[0,1,2].map(i => `<rect x="${24 + i * 100}" y="54" width="34" height="6" rx="2" fill="#94a3b8"/>`).join('')}
-    ${[0,1,2].map(i => `<rect x="${24 + i * 100}" y="66" width="52" height="12" rx="3" fill="#0f766e" opacity="${.85 - i * .22}"/>`).join('')}
-    <rect x="14" y="100" width="188" height="66" rx="6" fill="#fff" stroke="#e3e8ee"/>
-    ${[0,1,2,3,4,5,6].map(i => `<rect x="${28 + i * 24}" y="${152 - (8 + (i * 37) % 40)}" width="13" height="${8 + (i * 37) % 40}" rx="2" fill="#14b8a6"/>`).join('')}
-    <rect x="212" y="100" width="94" height="66" rx="6" fill="#fff" stroke="#e3e8ee"/>
-    ${[0,1,2,3].map(i => `<g><circle cx="228" cy="${116 + i * 15}" r="6" fill="#ccfbf1"/>
-      <rect x="240" y="${113 + i * 15}" width="54" height="6" rx="2" fill="#e3e8ee"/></g>`).join('')}`),
   xp: () => T.base('#3f8cf3', `
     <path d="M0 120 C 60 92 130 88 190 112 C 240 132 280 128 320 116 V180 H0Z" fill="#5cb52a"/>
     <rect x="0" y="164" width="320" height="16" fill="#245edb"/>
@@ -3402,72 +3322,7 @@ const PROJECTS = [
       `Open the project to read the research, the design system tokens, ten recreated screens with the laws
       behind each one, and an honest transparency note on what's real versus reconstructed.`],
     comments:[['@priya.designs','2 days ago','the verb-based nav (“Discover / Assess / Protect / Prove”) is such a clean way to teach the security lifecycle without a tutorial',22],
-              ['@femi_ux','1 week ago','the audit loop finding 26 dead tab destinations is the most useful part of this writeup honestly — stealing that technique',34]] },
-  { id:'pageflow', title:'PageFlow — landing page builder', thumb:'pageflow', views:'12K views', when:'this year',
-    role:'Product design + front-end', items:11,
-    tags:['#saas','#productdesign','#figma','#frontend'],
-    body:[`PageFlow is a landing page builder I designed and then built: a drag-and-drop canvas, a component
-      library, analytics, A/B testing and an integrations hub — eleven screens that had to feel like one product.`,
-      `The interesting problem was the canvas. A builder has to stay legible while the user is mid-drag, so the
-      chrome fades, drop targets get a dashed outline, and every panel collapses to give the page room. I designed
-      it in Figma and shipped it as a single-file HTML application, then rebuilt the dashboard side in React.`],
-    comments:[['@nikhil','2 days ago','the drag targets are the clearest ive seen in a builder tbh',12],
-              ['@sara.m','1 week ago','how long did the A/B testing screen take you? asking for a friend',7]] },
-  { id:'accurl', title:'ACCURL Europe — industrial B2B site', thumb:'accurl', views:'6.4K views', when:'ongoing',
-    role:'Web design + content system', items:8,
-    tags:['#webflow','#b2b','#manufacturing','#contentdesign'],
-    body:[`Heavy machinery is sold on specification sheets and trust, not on hero animations. The site is built
-      around product families, downloadable specs and a request flow that reaches a human quickly.`,
-      `Built in Webflow with a CMS structure the team can actually run: one collection per machine family, one for
-      case studies, and templates that stay tidy when someone adds a product at 6pm on a Friday.`],
-    comments:[['@devon.h','3 days ago','finally a machinery site that isnt a pdf in a trench coat',21],
-              ['@priya','2 weeks ago','the spec tables hold up on mobile, respect',9]] },
-  { id:'auradata', title:'AuraData — data platform UI', thumb:'auradata', views:'4.8K views', when:'3 months ago',
-    role:'Product design + design system', items:9,
-    tags:['#dataviz','#designsystem','#darkmode','#saas'],
-    body:[`A data platform where the dashboard is the product. Tiles first, detail second: the summary row answers
-      "is anything on fire", and everything below it explains why.`,
-      `The design system underneath is small on purpose — four surface levels, one accent, semantic colour kept
-      separate from brand colour so a red chart never reads as a red alert.`],
-    comments:[['@tomas','5 days ago','the fact that semantic != brand color here should be a law',31],
-              ['@ren','1 month ago','tile density is perfect, no notes',4]] },
-  { id:'betterment', title:'Fintech app redesign — case study', thumb:'betterment', views:'9.1K views', when:'5 months ago',
-    role:'UI/UX case study', items:6,
-    tags:['#fintech','#mobile','#casestudy','#figma'],
-    body:[`A self-directed redesign of a consumer investing app, rebuilt from the Figma file up. The goal was to
-      make the "how am I actually doing" question answerable in one glance instead of three taps.`,
-      `I kept the balance and the trend line together, moved account switching into the header, and cut the home
-      screen from nine modules down to four. Then I built it in HTML to check the spacing survived contact
-      with a real browser.`],
-    comments:[['@aisha','1 week ago','the one-glance framing is exactly the brief every fintech ignores',18],
-              ['@marc','3 weeks ago','four modules. brave. correct.',11]] },
-  { id:'kris', title:'Kris@Work — AI GTM platform', thumb:'kris', views:'7.7K views', when:'6 months ago',
-    role:'Product design', items:7,
-    tags:['#ai','#gtm','#productdesign','#conversational'],
-    body:[`A go-to-market platform where an assistant does the heavy lifting. The design question with any AI
-      product is what to show while it is thinking, and what to let the user correct afterwards.`,
-      `So: streamed responses in a card the user can edit in place, sources kept visible, and every generated
-      artefact landing somewhere it can be reviewed rather than straight into a send queue.`],
-    comments:[['@leo','4 days ago','editable-in-place output is so underrated',26],
-              ['@june.k','1 month ago','love that sources stay pinned',6]] },
-  { id:'rakuten', title:'Vendor dashboard rebuild', thumb:'rakuten', views:'5.2K views', when:'7 months ago',
-    role:'UI design + front-end', items:5,
-    tags:['#dashboard','#ecommerce','#tables','#figma'],
-    body:[`A vendor-facing dashboard: orders, payouts, returns, performance. Mostly a table problem, and table
-      problems are density problems.`,
-      `Sticky headers, tabular figures so columns line up, and status carried by a chip as well as a colour so it
-      still reads if you are colour blind or printing in greyscale.`],
-    comments:[['@harish','2 weeks ago','tabular-nums gang rise up',14],
-              ['@ellie','1 month ago','status chips + color, thank you',8]] },
-  { id:'paycrest', title:'Paycrest — HR SaaS dashboard', thumb:'paycrest', views:'3.9K views', when:'8 months ago',
-    role:'UI design + rebrand', items:6,
-    tags:['#hrtech','#saas','#rebrand','#webapp'],
-    body:[`An HR dashboard rebranded end to end — payroll runs, headcount, time off and approvals in one place,
-      with a teal identity that stays calm behind a lot of numbers.`,
-      `Approvals were the piece worth fighting for: a manager should be able to clear a queue without opening
-      seven records, so each row carries just enough context to say yes.`],
-    comments:[['@mina','3 weeks ago','approval rows with context = 20 mins of my week back',17],
-              ['@osei','1 month ago','the teal actually works, surprised',5]] }
+              ['@femi_ux','1 week ago','the audit loop finding 26 dead tab destinations is the most useful part of this writeup honestly — stealing that technique',34]] }
 ];
 
 const AVATARS = ['#e11d48','#0ea5e9','#f59e0b','#16a34a','#8b5cf6','#0f766e','#ef4444','#3b82f6'];
@@ -5873,16 +5728,16 @@ APPS.projects = {
       const q = win.state.filter.toLowerCase();
       const nav = win.state.nav;
       if (nav === 'ai') { renderAI(); return; }
-      const catmap = { design: ['smartpin','microsec','betterment','kris','auradata','paycrest'], web: ['pageflow','accurl','rakuten'],
-                       ideas: ['pageflow','kris'], about: [] };
+      const catmap = { design: ['smartpin','microsec'], web: ['smartpin','microsec'],
+                       ideas: ['smartpin','microsec'], about: [] };
       let list = PROJECTS.filter(p => !q ||
         (p.title + p.tags.join(' ') + p.body.join(' ')).toLowerCase().includes(q));
       if (nav !== 'home') list = nav === 'about' ? [] : list.filter(p => catmap[nav].includes(p.id));
       if (nav === 'about') {
         main.innerHTML = `<div class="pdetail"><h2>About this channel</h2>
-          <div class="pdesc"><p>${esc(ME.name)} — ${esc(ME.role.toLowerCase())}. Nine projects, mostly product
-          UI and websites for fintech, industrial B2B and SaaS teams — plus two full UX case studies, for an
-          OT/IIoT security console and a geospatial asset-tracking platform.</p>
+          <div class="pdesc"><p>${esc(ME.name)} — ${esc(ME.role.toLowerCase())}. Two full UX case studies:
+          MicroSec, a security console for OT/IIoT networks, and Smartpin, a geospatial asset-tracking platform
+          — both taken from research through to a complete, recreated screen set.</p>
           <p>Everything here was designed in Figma and, where it made sense, built as well. Open a project to read
           how it was put together.</p></div>
           <div class="prow"><button class="chip solid" type="button" data-go="contact">Get in touch</button>
@@ -6090,52 +5945,88 @@ APPS.resume = {
         </div>
         <div class="pdfscroll"><div class="page" id="pg-${win.id}">
           <h1>${esc(ME.name)}</h1>
-          <div class="tagline">${esc(ME.role.toUpperCase())} · UI/UX · WEBFLOW · FRONT-END</div>
-          <div class="contactline">${esc(ME.email)} · ${esc(ME.place)}</div>
+          <div class="tagline">${esc(ME.role.toUpperCase())} · UI/UX · DESIGN SYSTEMS · WEBFLOW</div>
+          <div class="contactline">${esc(ME.phone)} · ${esc(ME.email)} · linkedin.com/in/adityamondal1 · aditya-design.framer.ai · ${esc(ME.place)}</div>
           <hr>
-          <h2>Profile</h2>
-          <p style="font-size:12px;line-height:1.7;margin:0 0 4px">Freelance product and web designer working
-          across UI/UX, design systems and front-end build. Ten-ish projects a year for fintech, industrial B2B
-          and SaaS teams, usually as the only designer — which means research, design, build and handoff all land
-          on the same desk.</p>
-          <h2>Experience</h2>
-          <div class="job"><div class="jt"><b>Freelance Product &amp; Web Designer</b><i>2021 — present</i></div>
-            <div class="jr">Independent · remote</div>
+          <h2>Summary</h2>
+          <p style="font-size:12px;line-height:1.7;margin:0 0 4px">Product Designer with 5 years of experience in
+          fintech, SaaS, Web3, AI/ML, cybersecurity, health-tech, e-commerce and ed-tech. Skilled in transforming
+          complex ideas into intuitive user experiences, with expertise in end-to-end design, dashboards and
+          scalable design systems.</p>
+          <h2>Professional Experience</h2>
+          <div class="job"><div class="jt"><b>Product Designer — Microstep Europa / Mistura S.T</b><i>04/2026 — present</i></div>
+            <div class="jr">Bangalore, India · SaaS platforms and digital experiences for global clients</div>
             <ul>
-              <li>Design and ship product UI and marketing sites end to end: Figma files, Webflow builds, and hand-written front-end where a CMS won't do.</li>
-              <li>Built PageFlow, an eleven-screen landing page builder, from first wireframe to working drag-and-drop application.</li>
-              <li>Run design systems small enough to hold in one head: four surfaces, one accent, semantic colour kept separate from brand colour.</li>
+              <li>Own and scale Figma design systems — reusable component libraries, variants, auto layout and structured design documentation.</li>
+              <li>Oversee Webflow design and publishing quality: CMS structure, reusable sections, responsive layouts and maintainable class strategy.</li>
+              <li>Design web applications, software products and digital experiences for industrial technology clients including MicroStep and ACCURL — translating complex technical requirements into user-friendly workflows for advanced manufacturing and digital-twin experiences.</li>
+              <li>Present design concepts and UX decisions to stakeholders, aligning design outcomes with business and engineering goals.</li>
             </ul></div>
-          <div class="job"><div class="jt"><b>Design Lead (contract) — ACCURL Europe</b><i>ongoing</i></div>
-            <div class="jr">Industrial machinery · web + content</div>
+          <div class="job"><div class="jt"><b>Product Designer &amp; Brand — Speer Health</b><i>01/2026 — 04/2026</i></div>
+            <div class="jr">Bangalore, India · AI-powered field-to-insight platform for medical teams</div>
             <ul>
-              <li>Rebuilt the product site around machine families, downloadable specs and a short route to a human.</li>
-              <li>Set up a Webflow CMS structure the in-house team can run without breaking templates.</li>
+              <li>Designed the responsive web platform and a React Native mobile companion app for field-first use.</li>
+              <li>Built information architecture, task flows, personas and role-based UI for User / Manager / Admin.</li>
+              <li>Designed core modules: Home, Medical Insights, HCP Directory, and Ask Speer, an AI chatbot.</li>
+              <li>Shipped card-based list views, a badge/OCR scan flow, Conference Mode, engagement logging and daily summaries.</li>
+              <li>Ran stakeholder interviews and usability testing in Maze, with iterative wireframing in Figma.</li>
+              <li>Used Claude AI for structured UX review cycles and Figma Make for rapid wireframing on web and mobile.</li>
             </ul></div>
-          <div class="job"><div class="jt"><b>Product Designer (contract) — AuraData Technologies</b><i>2024 — 2026</i></div>
-            <div class="jr">Data platform · product UI + design system</div>
+          <div class="job"><div class="jt"><b>Product Designer — AppsInfobits (AdvaDigital)</b><i>05/2024 — 01/2026</i></div>
+            <div class="jr">Bangalore, India · Digital solutions across fintech, AI and social products</div>
             <ul>
-              <li>Designed the dashboard layer: summary tiles first, detail second, dark-first with a tested contrast palette.</li>
-              <li>Documented components and states so engineering could build without a design review per screen.</li>
+              <li>Founding designer in a 360° team of 10+ ex-Googlers, building web and mobile apps for real-time global connection and AI-integrated remote shopping.</li>
+              <li>Sole designer for IndePay's fintech app — payment flows and interfaces end to end.</li>
+              <li>Contributed to <b>MicroSec</b>, designing features for their cybersecurity platform for IoT/OT networks.</li>
+              <li>Designed and managed <b>Prift</b>, a lightweight MVP design system covering onboarding, payments, dashboard and analytics for a fintech platform.</li>
+              <li>Worked with the Kris@Work team on an AI-powered GTM companion tool.</li>
+              <li>Senior designer on an all-in-one internal tool, building a design system for communication, task and team management; managed 2 junior designers.</li>
+              <li>Designed Finovate (Vietnamese mobile app) and Comunin (social/messaging app); served as interim product manager on client-facing work.</li>
             </ul></div>
-          <div class="job"><div class="jt"><b>Policy writing &amp; professional outreach</b><i>earlier</i></div>
-            <div class="jr">The useful prehistory</div>
-            <ul><li>Years of making complicated material legible for people who had no reason to be patient with it. Still the job.</li></ul></div>
+          <div class="job"><div class="jt"><b>UI/UX Designer — Growth Natives</b><i>01/2022 — 05/2024</i></div>
+            <div class="jr">Chandigarh · Growth-focused design and development agency</div>
+            <ul>
+              <li>Designed dashboards, webpages and mobile apps for DigGrowth and NetworkON — SaaS and logistics platforms.</li>
+              <li>Led design for LaMav, an e-commerce organic beauty brand, across UI and brand storytelling.</li>
+              <li>Contributed to enterprise UX for Adobe (US), HubSpot, Spirent Communications, Escalon, DispatchIt, Highspot, Instapage, Booking.com (Pulse) and Imageware.</li>
+              <li>Improved usability scores 35% through wireframes, story maps and interactive prototypes; A/B testing lifted design success rates 25%.</li>
+            </ul></div>
+          <div class="job"><div class="jt"><b>Junior UI/UX Designer — SourceFuse Technologies</b><i>05/2021 — 12/2021</i></div>
+            <div class="jr">Chandigarh · Cloud-native application development</div>
+            <ul>
+              <li>Designed the Rakuten Vendor Dashboard using the Rakuten Design System, with component-based Figma files for developer handoff.</li>
+              <li>Designed webpages and dashboards for FlixMD and Telescope Health, healthcare products for clinicians and patients.</li>
+              <li>User research lifted engagement 25%; prototyping and usability testing cut iteration cycles 20%.</li>
+              <li>Designed to WCAG accessibility standards throughout.</li>
+            </ul></div>
           <h2>Selected projects</h2>
-          <ul><li><b>PageFlow</b> — SaaS landing page builder: canvas, analytics, A/B testing, integrations.</li>
-            <li><b>Kris@Work</b> — AI go-to-market platform, conversational UI with editable output.</li>
-            <li><b>Fintech app redesign</b> — self-directed case study, home screen cut from nine modules to four.</li>
-            <li><b>Paycrest</b> — HR SaaS dashboard and rebrand: payroll, headcount, approvals.</li></ul>
+          <ul><li><b>MicroSec</b> — cybersecurity console for IoT/OT networks: full case study on this desktop.</li>
+            <li><b>Smartpin</b> — geospatial asset-tracking platform: full case study on this desktop.</li>
+            <li><b>IndePay</b> — fintech app, end-to-end payment flows and UI.</li>
+            <li><b>Prift</b> — fintech MVP design system: onboarding, payments, dashboard, analytics.</li>
+            <li><b>Speer Health</b> — field-first web platform and mobile companion app for medical teams.</li></ul>
+          <h2>Education</h2>
+          <div class="job"><div class="jt"><b>Bachelors of Computer Applications</b><i>05/2017 — 12/2020</i></div>
+            <div class="jr">Punjab Technical University · Chandigarh</div></div>
+          <h2>Certifications</h2>
+          <div class="skills">
+            <div><b>OCI Generative AI Professional</b> — Oracle, Aug 2025</div>
+            <div><b>Google UX Design Professional Certificate</b> — Google, Jun 2025</div>
+            <div><b>Microsoft UX Design</b> — Microsoft, Jul 2025</div>
+            <div><b>UX Research &amp; Design Specialization</b> — University of Michigan, May 2025</div>
+            <div><b>UI/UX Design Specialization</b> — California Institute of the Arts, Jul 2025</div>
+            <div><b>Design for a Better World with Don Norman</b> — IxDF, Mar 2024</div>
+          </div>
           <h2>Skills</h2>
           <div class="skills">
-            <div><b>Design</b> — product UI, UX flows, design systems, prototyping</div>
-            <div><b>Build</b> — Webflow, HTML, CSS, JavaScript, Framer</div>
-            <div><b>Tools</b> — Figma, Adobe CC, VS Code, Claude Code, Notion</div>
-            <div><b>Also</b> — content production, decks, technical writing</div>
+            <div><b>Design</b> — wireframing, rapid prototyping, motion graphics, branding, user research, A/B testing, story mapping, information architecture, user flows, interaction design, accessibility (WCAG 2), design systems</div>
+            <div><b>Tools</b> — Figma, Adobe CC (After Effects, XD, Photoshop, Illustrator), Axure RP, Balsamiq, InVision, Blender 3D</div>
+            <div><b>Build</b> — Webflow, Lovable, React, Angular</div>
+            <div><b>Also</b> — AI/ML, Midjourney, Google Labs, Google Analytics</div>
           </div>
           <h2>Working with me</h2>
-          <p style="font-size:12px;line-height:1.7;margin:0">Best on projects where the constraints are real and
-          somebody needs one person to hold design and build together. Available for freelance and contract work.</p>
+          <p style="font-size:12px;line-height:1.7;margin:0">Currently full-time at Microstep Europa / Mistura
+          S.T, and always open to hearing about interesting new work — reach out through the Contact Me window.</p>
         </div></div>
       </div>
       ${statusbar(['1 of 1', '100%'])}`;
@@ -6364,14 +6255,14 @@ APPS.cmd = {
           if (a) { write(`Starting ${esc(arg)}…`, 'g'); openApp(a); }
           else write(`'${esc(arg)}' is not something I can open. Try: ${Object.keys(map).slice(0, 8).join(', ')}`, 'r');
           break; }
-        case 'whoami': write(`ADITYA-XP\\${esc(ME.name.toLowerCase())}`, 'g');
+        case 'whoami': write(`ADITYA-XP\\${esc(ME.name.split(' ')[0].toLowerCase())}`, 'g');
           write(`${esc(ME.role)} — ${esc(ME.email)}`); break;
         case 'ver': write(''); write('Aditya XP [Portfolio Edition, build 2026]', 'y');
           write('One HTML file. No frameworks. No image files.'); write(''); break;
         case 'tree':
-          ['C:\\ADITYA', '├── work', '│   ├── pageflow', '│   ├── accurl-europe', '│   ├── auradata',
-           '│   ├── fintech-redesign', '│   ├── kris-at-work', '│   ├── vendor-dashboard', '│   └── paycrest',
-           '├── resume.pdf', '├── readme.txt', '└── coffee (empty)'].forEach(l => write(esc(l)));
+          ['C:\\ADITYA', '├── work', '│   ├── microsec', '│   ├── smartpin', '│   ├── microstep-europa',
+           '│   ├── speer-health', '│   └── appsinfobits', '├── resume.pdf', '├── readme.txt',
+           '└── coffee (empty)'].forEach(l => write(esc(l)));
           break;
         case 'echo': write(esc(arg)); break;
         case 'color': {
@@ -6751,17 +6642,20 @@ const hasWord = (norm, words) => words.some(k => norm.includes(' ' + k + ' '));
    replies are drawn from, so the bot never invents anything about him that
    isn't actually on the resume. */
 const RESUME_FACTS = {
-  profile: 'Freelance product and web designer working across UI/UX, design systems and front-end build — '
-    + 'ten-ish projects a year for fintech, industrial B2B and SaaS teams, usually as the only designer.',
+  profile: 'Product Designer with 5 years of experience across fintech, SaaS, Web3, AI/ML, cybersecurity, '
+    + 'health-tech, e-commerce and ed-tech — end-to-end design, dashboards and scalable design systems.',
   roles: [
-    'Freelance Product & Web Designer, 2021 — present (independent, remote)',
-    'Design Lead (contract), ACCURL Europe, ongoing (industrial machinery, web + content)',
-    'Product Designer (contract), AuraData Technologies, 2024 — 2026 (data platform, product UI + design system)'
+    'Product Designer, Microstep Europa / Mistura S.T, 04/2026 — present (Bangalore, India)',
+    'Product Designer & Brand, Speer Health, 01/2026 — 04/2026 (Bangalore, India)',
+    'Product Designer, AppsInfobits (AdvaDigital), 05/2024 — 01/2026 (Bangalore, India)',
+    'UI/UX Designer, Growth Natives, 01/2022 — 05/2024 (Chandigarh)',
+    'Junior UI/UX Designer, SourceFuse Technologies, 05/2021 — 12/2021 (Chandigarh)'
   ],
-  skills: 'Design — product UI, UX flows, design systems, prototyping. Build — Webflow, HTML, CSS, JavaScript, '
-    + 'Framer. Tools — Figma, Adobe CC, VS Code, Claude Code, Notion.',
-  availability: 'Available for freelance and contract work — best on projects where one person needs to hold '
-    + 'design and build together.'
+  skills: 'Figma, Adobe CC, Axure RP, Balsamiq, InVision, Blender 3D — wireframing, prototyping, motion graphics, '
+    + 'branding, user research, A/B testing, information architecture, design systems, accessibility (WCAG 2), '
+    + 'Webflow, React, Angular, AI/ML.',
+  availability: 'Currently full-time at Microstep Europa / Mistura S.T — always open to hearing about interesting '
+    + 'new work via the Contact Me window.'
 };
 
 const BOT_REPLIES = [
@@ -6771,13 +6665,13 @@ const BOT_REPLIES = [
         "Hello — I'm AdiBot. Ask about his projects, tools, availability, resume, or the XP desktop."] },
   { k: ['hire','available','availability','freelance','work with','rate','budget','quote','price','pricing','cost','collaborate'],
     r: [`${RESUME_FACTS.availability} Based in ${ME.place}.`,
-        "Best way in is the Contact Me window. Tell me the deadline first, it changes everything else.",
-        "Rates depend on scope — open Contact Me and describe the project, an actual human answers."],
+        "Best way in is the Contact Me window — say what you're looking for and an actual human replies.",
+        "Not taking on freelance work right now, full-time at Microstep Europa / Mistura S.T — but always happy to hear about it via Contact Me."],
     action: () => openApp('contact'), ask: 'Want me to open Contact Me for you?', label: 'Contact Me' },
   { k: ['project','projects','portfolio','case study','case studies','examples','show me'],
-    r: ["Open My Projects — seven of them, each with a write-up of what the actual problem was.",
-        "PageFlow is the one people ask about most. It's a landing page builder, eleven screens.",
-        "There's fintech, industrial B2B, a data platform, an AI GTM tool, and a couple of dashboards — a real spread."],
+    r: ["Open My Projects — two full UX case studies, each with a real write-up of the actual problem.",
+        "MicroSec is a 58-screen cybersecurity console for OT/IoT networks — research through to a full design system.",
+        "Smartpin is a geospatial asset-tracking platform: a desktop console and a field mobile app, 15 screens."],
     action: () => openApp('projects'), ask: 'Want me to open My Projects?', label: 'My Projects' },
   { k: ['figma','webflow','tool','tools','stack','software','framer','react','html','css','javascript'],
     r: [RESUME_FACTS.skills,
@@ -6819,14 +6713,7 @@ const BOT_REPLIES = [
    instead of a generic one, and can open straight to that project. */
 const PROJECT_TOPICS = [
   { id: 'smartpin',   keys: ['smartpin', 'hubble network', 'hubble', 'geospatial', 'asset tracking', 'tracker'] },
-  { id: 'microsec',   keys: ['microsec', 'microids', 'security console', 'ot security', 'cyberassessor', 'lcms'] },
-  { id: 'pageflow',   keys: ['pageflow', 'landing page'] },
-  { id: 'accurl',     keys: ['accurl', 'industrial site', 'b2b site', 'machinery'] },
-  { id: 'auradata',   keys: ['auradata', 'data platform'] },
-  { id: 'betterment', keys: ['betterment', 'fintech', 'banking app'] },
-  { id: 'kris',       keys: ['kris', "kris@work", 'gtm platform'] },
-  { id: 'rakuten',    keys: ['rakuten', 'vendor dashboard'] },
-  { id: 'paycrest',   keys: ['paycrest', 'hr saas', 'hr dashboard'] }
+  { id: 'microsec',   keys: ['microsec', 'microids', 'security console', 'ot security', 'cyberassessor', 'lcms'] }
 ].map(t => {
   const p = PROJECTS.find(x => x.id === t.id);
   const blurb = p ? String(p.body[0]).replace(/\s+/g, ' ').trim().split('. ').slice(0, 2).join('. ') : '';
@@ -6916,7 +6803,7 @@ APPS.msn = {
           <p style="margin:0 0 9px;line-height:1.7">It only knows two things on purpose: Aditya's professional
           background, kept consistent with the My Resume window, and this desktop itself. Anything outside that
           gets a polite "not what I cover" instead of a guess.</p>
-          <p style="margin:0;line-height:1.7">Ask about a specific project by name (try "pageflow" or "auradata")
+          <p style="margin:0;line-height:1.7">Ask about a specific project by name (try "smartpin" or "microsec")
           for a real answer pulled straight from My Projects. For an actual conversation, use Contact Me.</p>` }) }]
     });
     add('AdiBot', `Hey — I'm the bot version of ${ME.name}. Ask about the work, the tools, or how to hire him.`);
@@ -8530,7 +8417,7 @@ addEventListener('keydown', e => {
   if ($('#welcome').classList.contains('on') && e.key !== 'Tab') logIn();
 });
 
-/* deep link:  #projects  or  #projects/pageflow */
+/* deep link:  #projects  or  #projects/microsec */
 addEventListener('hashchange', routeHash);
 function routeHash() {
   const h = location.hash.replace(/^#\/?/, '');
