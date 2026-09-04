@@ -3329,18 +3329,8 @@ const T = {
     <path d="M198 100 L214 82 L228 92 L244 68 L258 84 L272 60 L296 76" fill="none" stroke="#2bb673" stroke-width="2"/>
     <rect x="72" y="126" width="228" height="42" rx="4" fill="#1f1f1f"/>
     ${[0,1,2,3].map(i => `<rect x="${82 + i * 56}" y="136" width="46" height="22" rx="3" fill="#282828"/>`).join('')}`),
-  smartpin: () => T.base('#EEF1EA', `
-    <rect x="0" y="0" width="320" height="30" fill="#F9FAF6"/>
-    <rect x="14" y="11" width="8" height="8" rx="2" fill="#1F6F5F"/>
-    <rect x="28" y="12" width="70" height="7" rx="2" fill="#1A2420"/>
-    ${[0,1,2,3].map(i => `<rect x="${140 + i * 42}" y="38" width="34" height="26" rx="3" fill="#F9FAF6" stroke="#C7CFC1"/>`).join('')}
-    ${[0,1,2,3].map(i => `<rect x="${146 + i * 42}" y="44" width="20" height="9" rx="1" fill="${i===1?'#A83F2C':i===2?'#B5761C':'#1F6F5F'}"/>`).join('')}
-    <rect x="14" y="38" width="112" height="120" rx="4" fill="#F9FAF6" stroke="#C7CFC1"/>
-    <circle cx="40" cy="70" r="4" fill="#1F6F5F"/><circle cx="70" cy="90" r="4" fill="#1F6F5F"/>
-    <circle cx="95" cy="65" r="4" fill="#A83F2C"/><circle cx="55" cy="120" r="4" fill="#1F6F5F"/>
-    <circle cx="100" cy="130" r="4" fill="#B5761C"/>
-    <rect x="140" y="74" width="166" height="84" rx="4" fill="#F9FAF6" stroke="#C7CFC1"/>
-    ${[0,1,2].map(i => `<rect x="150" y="${86 + i * 22}" width="146" height="14" rx="2" fill="#E2E6DC"/>`).join('')}`)
+  smartpin: () => `<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <image href="${SP_IMG_DASH}" x="0" y="0" width="320" height="180" preserveAspectRatio="xMidYMid slice"/></svg>`
 };
 
 const PROJECTS = [
