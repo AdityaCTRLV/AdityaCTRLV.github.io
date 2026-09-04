@@ -3222,6 +3222,9 @@ function enterDesktop() {
   setTimeout(() => balloon('Welcome to Aditya XP',
     'Double-click the icons, drag the windows around, and try the Start menu. <a href="#">Take the tour</a>.',
     'flag', () => openApp('help')), 1500);
+  setTimeout(() => balloon('A quick note',
+    'A few visuals around this portfolio (illustrations, mockups, the AI Outputs gallery) are AI-generated — please double-check anything before relying on it.',
+    'info'), 15000);
   setTimeout(() => { if (!WINS.size) balloon('AdiBot',
     'Someone wants to chat with you. <a href="#">Open Messenger</a>.', 'msn', () => openApp('msn')); }, 26000);
 }
@@ -5545,7 +5548,8 @@ APPS.projects = {
 
     /* ---- AI Outputs: gallery grid + a click-to-open full-size lightbox ---- */
     const renderAI = () => {
-      main.innerHTML = `<div class="aigrid">${AI_OUTPUTS.map(o => `
+      main.innerHTML = `<div class="msnote warn"><b>Please double-check AI outputs.</b> These pieces were made with AI tools — treat them as drafts and verify anything before relying on it.</div>
+      <div class="aigrid">${AI_OUTPUTS.map(o => `
         <div class="aicard${o.type === 'video' ? ' video' : ''}" data-ai="${o.id}" tabindex="0" role="button"
           aria-label="Open ${esc(o.title)}">
           <div class="thumbwrap">${o.art()}
