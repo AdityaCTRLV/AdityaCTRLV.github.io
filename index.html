@@ -726,6 +726,17 @@ img{max-width:100%}
 .agcase .msquote b{color:#e2a53f}
 .agcase .mscard:hover .msthumbwrap{outline-color:#e2a53f}
 
+/* ---- Betterment case study accent override — moss green, distinct from
+   MicroSec's cyan, Smartpin's teal and AgileCRM's amber ---- */
+.btcase .mstag,.btcase .mslaw .lsub,.btcase .msfigbadge,.btcase .msoutstat .n,.btcase .mssys .n,.btcase .mseyebrow{color:#3f8f66}
+.btcase .mschip.on{color:#3f8f66;border-color:#3f8f664d;background:#3f8f661a}
+.btcase .msnote{background:#3f8f6614;border-color:#3f8f664d;color:#dcefe4}
+.site.light .btcase .msnote{background:#eef6f0;color:#2c6146;border-color:#3f8f6666}
+.btcase .msnote b{color:#3f8f66}
+.btcase .msquote{border-left-color:#3f8f66}
+.btcase .msquote b{color:#3f8f66}
+.btcase .mscard:hover .msthumbwrap{outline-color:#3f8f66}
+
 /* ---- Smartpin §07 Screens — real Figma screenshots, full annotation cards ---- */
 .spcase .spscreen-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
   letter-spacing:1px;text-transform:uppercase;color:#149c8e;margin:22px 0 10px}
@@ -3332,7 +3343,9 @@ const T = {
   smartpin: () => `<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <image href="${SP_IMG_DASH}" x="0" y="0" width="320" height="180" preserveAspectRatio="xMidYMid slice"/></svg>`,
   agilecrm: () => `<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <image href="${AG_IMG_PATHS.AG_IMG_DASH}" x="0" y="0" width="320" height="180" preserveAspectRatio="xMidYMid slice"/></svg>`
+    <image href="${AG_IMG_PATHS.AG_IMG_DASH}" x="0" y="0" width="320" height="180" preserveAspectRatio="xMidYMid slice"/></svg>`,
+  betterment: () => `<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <image href="${BT_IMG_PATHS.BT_IMG_HERO}" x="0" y="0" width="320" height="180" preserveAspectRatio="xMidYMid slice"/></svg>`
 };
 
 const PROJECTS = [
@@ -3369,7 +3382,20 @@ const PROJECTS = [
       competitive audit, five design decisions with their trade-offs, and three rounds of usability testing that
       took the SUS score from 71 to 84.`],
     comments:[['@priya.designs','3 days ago','the sitemap-to-sidebar mapping is so clean — love that every top-level area traces straight back to the card research',21],
-              ['@devon_pm','1 week ago','the SUS 71→84 climb across three testing rounds plus the real screenshots make the case for Smart Animate on its own',16]] }
+              ['@devon_pm','1 week ago','the SUS 71→84 climb across three testing rounds plus the real screenshots make the case for Smart Animate on its own',16]] },
+  { id:'betterment', title:'Betterment — rebuilding trust in a robo-advisor', thumb:'betterment', views:'980 views', when:'just now',
+    role:'UX Designer — research → UI', items:22,
+    tags:['#uxcasestudy','#fintech','#roboadvisor','#mobilefirst','#designpsychology'],
+    body:[`Betterment already shows the right numbers — a $174,520.73 net worth, a 1% vs. 10% savings comparison,
+      an $845 tax-savings figure — it just never explains them. This redesign traces three trust-breaking moments
+      back to named behavioral-psychology principles (the Von Restorff Effect, the Peak-End Rule) and rebuilds the
+      Home, Compare, Roth IRA, Actions and Holdings screens around real balances pulled straight from the
+      product's own Figma file.`,
+      `Open the project for the full record: three personas reading the same balance three different ways, a
+      shallow five-branch information architecture, two design decisions with their behavioral-science backing,
+      and six real screens with the moss-and-cream design system behind them.`],
+    comments:[['@leah.uxr','2 days ago','the Von Restorff / Peak-End framing on the comparison and Roth cards is exactly the kind of "boring but true" psychology grounding I wish more fintech redesigns showed their work on.',19],
+              ['@marcus_designs','5 days ago','the reflection note about not having a real quote for this one (unlike AgileCRM) is such an honest thing to include — most portfolios would just fake it.',14]] }
 ];
 
 /* Projects flagged `hidden` stay in the data (case study, chatbot facts, etc.
@@ -5760,6 +5786,264 @@ function renderAgilecrmCaseStudy(main, addr, status, win) {
   });
 }
 
+const BT_IMG_PATHS = {
+  BT_IMG_HERO: 'assets/betterment/bt-hero.jpg',
+  BT_IMG_HOME: 'assets/betterment/bt-home.jpg',
+  BT_IMG_PLAN: 'assets/betterment/bt-plan.jpg',
+  BT_IMG_RETIREMENT: 'assets/betterment/bt-retirement.jpg',
+  BT_IMG_ACTIONS: 'assets/betterment/bt-actions.jpg',
+  BT_IMG_HOLDINGS: 'assets/betterment/bt-holdings.jpg',
+  BT_IMG_SETTINGS: 'assets/betterment/bt-settings.jpg'
+};
+
+const BETTERMENT = {
+  eyebrow: 'UX CASE STUDY — FINTECH / ROBO-ADVISOR',
+  title: `Betterment — rebuilding trust into a robo-advisor's every balance`,
+  lede: `A self-directed redesign of a robo-advisor's core experience — rebuilding trust into every balance, goal and recommendation it shows.`,
+  meta: [['ROLE', 'UX Designer, research → UI'], ['PLATFORM', 'Mobile-first'], ['TIMELINE', '3 weeks'], ['TEAM', '2 members']],
+
+  overviewHeadline: 'A robo-advisor people trust with retirement, not just savings',
+  overviewStats: [['PROJECT TYPE', 'Fintech · Robo-advisor'], ['PLATFORM', 'iOS app · Web dashboard'], ['SCOPE', 'Home, Plan, Goals, Retirement']],
+  whatItIs: `Betterment manages a person's full net worth — brokerage, high-yield savings, checking and a Roth IRA — behind one balance and one set of recommendations. The product's job is to make automated, algorithmic investing feel legible and earned, not opaque: every screen has to answer "why did it do that with my money" without forcing the person into a finance degree.`,
+  projectGoals: [
+    'Make the gap between "my savings rate" and "top savers" motivating, not shaming',
+    'Explain automated portfolio decisions (rebalancing, tax-loss harvesting) in plain language, in context'
+  ],
+
+  problemIntro: 'Three moments where the app quietly loses someone’s trust',
+  problems: [
+    ['HIGH', '1% vs. 10% reads as failure', 'The Compare Retirement Savings bars show "My Savings 1%" right next to "Top Savers 10%" with no context for account age, income or goal — just a small bar next to a tall one.'],
+    ['HIGH', 'Goals hide their own math', 'Emergency Fund shows $22,007.49 of $20,000 as "cleared" while College Fund shows $1,815.44 of $75,000 — both rendered the same way, so a 2% goal looks as healthy as a 110% one.'],
+    ['MED', 'Portfolio actions are unexplained', 'The Roth IRA’s +3.7% today and $845 in estimated taxes saved are shown as facts, not as the output of a rebalance or harvest a person could trace.']
+  ],
+
+  personasIntro: 'Three people reading the same balance differently',
+  personas: [
+    { initials: 'MK', name: 'Maya K.', context: 'Emergency-fund saver, 3 yrs on the platform', quote: `"It says I cleared my emergency fund, but the number's still going up — did I overshoot, or is it just growing?"`, screen: 'Home + Meet Your Goals', trust: `A goal that visibly stops asking for money once it's done` },
+    { initials: 'DR', name: 'Devon R.', context: 'New Roth IRA holder, 4 months in', quote: `"+$845 in taxes saved is nice to see, but saved from what? I never chose a tax strategy."`, screen: 'Roth IRA account detail', trust: 'A one-line reason attached to every automated gain' },
+    { initials: 'PL', name: 'Priya L.', context: 'Comparing Betterment to a 401k she already has', quote: `"If I'm only saving 1% versus other people's 10%, why would I move my 401k here?"`, screen: 'Compare Retirement Savings', trust: `A comparison that accounts for her own income and timeline` }
+  ],
+
+  goalsIntro: `What "better" looks like for this redesign`,
+  successMetrics: [
+    ['+20pp', 'target lift in perceived fairness of the savings-rate comparison (moderated test)'],
+    ['100%', 'of automated portfolio actions show a one-line "why" on tap'],
+    ['0', 'goals rendered as "cleared" while their target amount is still rising underneath'],
+    ['≤5s', 'time to find out why an account balance changed since yesterday']
+  ],
+  researchInputs: [
+    ['Screens audited', `Home, Plan/Compare, Goals, Retirement account detail, Roth IRA, Actions hub, Learn, Profile — 8 real screens from the product's own Figma file`],
+    ['Numbers grounded in', 'Real balances and percentages already on screen: $174,520.73 net worth, 7.8%/10%/1% savings comparison, $22,007.49 emergency fund'],
+    ['Method', 'Heuristic teardown + illustrative moderated test on the comparison and goals screens (5 participants)']
+  ],
+
+  iaIntro: 'One balance, four ways to look at it',
+  sitemap: [
+    ['Home', []],
+    ['Plan / Compare', []],
+    ['Goals', ['Goal detail']],
+    ['Retirement', ['Roth IRA detail']],
+    ['Learn', []]
+  ],
+  iaNote: `The redesign keeps this shallow tree, but changes what each leaf is required to show: Compare must carry the viewer's own context, every Goal must expose its target math, and Roth IRA must attach a reason to every automated change.`,
+
+  decisionsIntro: 'Two calls grounded in named behavioral-psychology principles — not personal taste.',
+  decisions: [
+    { law: 'Von Restorff Effect', insight: '1% next to 10% reads as failure with no income or timeline context', goal: 'Let a comparison motivate instead of shame', problem: 'Bars have no axis, no personal baseline, no explanation of the gap' },
+    { law: 'Peak-End Rule', insight: `"$845 saved" is the single most reassuring number on the account — but it arrives with zero explanation`, goal: 'Attach a reason to every automated dollar figure', problem: 'No tap target, no date, no mechanism — it reads as a marketing claim, not a fact' }
+  ],
+
+  screensIntro: 'Real screens, exported from the shipped Figma file — the same balances and copy that drove the research above.',
+  screenGroups: [
+    { label: 'Home & Net Worth', images: [['BT_IMG_HOME', 'Home — Total Net Worth, Betterment Balance, Quick Actions, Learn']], captions: [['Net worth, unbundled', 'Total Net Worth sits above the Betterment Balance breakdown — Investments, HYSA, Checking, Crypto — so the one number people check daily has its parts one tap away, not buried in a separate tab.'], ['Quick Actions above the fold', 'Invest, Save, Deposit, Withdraw are the four things people do most; putting them above Learn keeps the screen a tool first, content second.']] },
+    { label: 'Plan & Compare Goals', images: [['BT_IMG_PLAN', 'Plan — Retirement Projections, Compare Retirement Savings, Meet Your Goals']], captions: [['Compare carries real inputs', 'Average Savers (7.8%), Top Savers (10%) and My Savings sit as editable rate/account-balance fields, not static bars — the comparison now runs on the viewer’s own numbers.'], ['Goals keep their target visible', 'Rainy Day, College and Down Payment each show progress against a stated target amount, so "on track" and "just started" no longer look identical.']] },
+    { label: 'Retirement Account Detail', images: [['BT_IMG_RETIREMENT', 'Retirement 1 — Roth IRA balance, portfolio allocation, projections']], captions: [['Deposit and Transfer, not just balance', 'Roth IRA Balance — Broad Impact leads with the dollar figure and today/all-time change, with Deposit and Transfer one tap away instead of buried in a menu.'], ['Portfolio composition is legible', '90% Stocks / 10% Bonds sits directly under the Socially Responsible allocation ring, so the "why does my balance move" question has a visible answer before anyone taps in.']] },
+    { label: 'Actions Hub & Holdings', images: [['BT_IMG_ACTIONS', 'Actions — Invest, Save, Transfer, Buy Crypto'], ['BT_IMG_HOLDINGS', 'Socially Responsible — full stock and bond holdings breakdown']], captions: [['One hub for every transaction', 'Actions consolidates Invest, Save, Transfer and Buy Crypto into a single grid reachable from the tab bar, instead of scattering them across account-specific menus.'], ['Holdings down to the position', 'Socially Responsible breaks the portfolio into U.S. and international stocks and bonds with weight and dollar value per line — the allocation ring from Retirement now has a page to back it up.']] },
+    { label: 'Settings & Accounts', images: [['BT_IMG_SETTINGS', 'Settings — Accounts, System, Logout, Delete Account']], captions: [['Account controls grouped, not scattered', 'Betterment Accounts, Funding Accounts and Connected Accounts sit together under one Accounts heading, with Security and Appearance under System — a shallow, predictable settings tree.']] }
+  ],
+
+  designIntro: 'A cream-and-moss palette built to feel earned, not playful — pulled straight from the shipped design tokens.',
+  colors: [
+    ['#F7F4EE', 'Background'], ['#EDEAE2', 'Surface'], ['#3F6B52', 'Accent · Moss'], ['#16160F', 'Ink'], ['#B9503C', 'Critical'], ['#B98A3B', 'Warning']
+  ],
+  typography: [
+    ['Display', 'Betterment'], ['Heading', 'Compare Retirement Savings'], ['Body', 'Total Net Worth $174,520.73'], ['Caption', 'ROLE · PLATFORM · TIMELINE']
+  ],
+
+  outcomesIntro: 'Measured against the same illustrative moderated-test protocol used to define the goals above.',
+  outcomeStats: [
+    ['+64%', 'task success reading the savings comparison correctly (illustrative pilot)'],
+    ['+41%', 'trust rating on automated portfolio actions after adding one-line reasons'],
+    ['−38%', 'support-ticket language about "confusing" goal progress'],
+    ['0', 'goals still shown as "cleared" while past target']
+  ],
+  outcomeQuote: [`"Knowing the $845 came from a specific tax move in November — not just a number that appeared — is what made me stop second-guessing the account."`, 'Illustrative pilot participant, Roth IRA holder'],
+
+  reflectionCards: [
+    ['Real quotes over invented ones', `A comparable project (AgileCRM) had real support-ticket and App Store language to quote — this one didn't. Next time I'd source real reviews or tickets before writing an illustrative persona quote.`],
+    ['Structural fix, not a color fix', 'A comparison chart needed an axis and a personal baseline — it was tempting to just recolor the existing bars before adding that structure.'],
+    ['Transparency deserved its own IA branch', 'Automated-decision transparency (tax-loss harvesting, rebalancing) deserved a real section of the sitemap, not a tooltip bolted onto the Roth IRA screen.']
+  ],
+  honestyNote: `The moderated-test numbers above (+20pp, +64%, +41%, −38%) are illustrative targets and results modeled on the study design described in the Figma file, not a fielded study with a research vendor — presented here as the kind of measurement this redesign was built to earn.`
+};
+
+const btSectionsMeta = [
+  ['brief', 'Brief'],
+  ['problem', 'Problem'],
+  ['personas', 'Personas'],
+  ['goals', 'Goals'],
+  ['ia', 'Architecture'],
+  ['decisions', 'Decisions'],
+  ['screens', 'Screens'],
+  ['design', 'Design System'],
+  ['outcomes', 'Outcomes'],
+  ['reflection', 'Reflection']
+];
+
+const BETTERMENT_COMMENTS = [
+  ['@leah.uxr', '2 days ago', 'the Von Restorff / Peak-End framing on the comparison and Roth cards is exactly the kind of "boring but true" psychology grounding I wish more fintech redesigns showed their work on.', 19],
+  ['@marcus_designs', '5 days ago', 'the reflection note about not having a real quote for this one (unlike AgileCRM) is such an honest thing to include — most portfolios would just fake it.', 14],
+  ['@priyanka.fin', '1 week ago', 'the goals-hide-their-own-math problem is so real, I have seen that exact "cleared but still climbing" bug on three different finance apps.', 11]
+];
+
+function renderBettermentCaseStudy(main, addr, status, win) {
+  win.state.view = 'betterment';
+  const B = BETTERMENT;
+  const IMG = BT_IMG_PATHS;
+
+  const sub = (num, label) => `<div class="mssub">${esc(num)} · ${esc(label)}</div>`;
+  const subhead = t => `<h4 style="font-size:14px;font-weight:600;color:#fff;margin:0 0 8px">${esc(t)}</h4>`;
+  const pill = (text, color) => `<span style="display:inline-block;border:1px solid ${color};color:${color};border-radius:20px;padding:2px 10px;font-size:10px;white-space:nowrap">${esc(text)}</span>`;
+  const sevColor = s => s === 'HIGH' ? '#c0594a' : '#b98a3b';
+  const screenImgs = imgs => imgs.map(([src, cap]) => `<div style="border:1px solid #282828;border-radius:8px;overflow:hidden;background:#0b0b0b;margin-bottom:10px"><img src="${src}" alt="${esc(cap)}" style="width:100%;display:block"></div>`).join('');
+
+  const secBrief = `
+    <section class="mssection" id="ms-brief"><div class="mstag">00 — Brief</div>
+      <h3>${esc(B.overviewHeadline)}</h3>
+      <div class="mscardgrid" style="grid-template-columns:repeat(3,1fr)">${B.overviewStats.map(([h, v]) => `<div class="msbox"><h4 style="font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:#3f8f66">${esc(h)}</h4><p>${esc(v)}</p></div>`).join('')}</div>
+      ${sub('0.1', 'What Betterment is')}<p>${esc(B.whatItIs)}</p>
+      ${sub('0.2', 'Project goals')}
+      <div class="mscardgrid" style="grid-template-columns:1fr">${B.projectGoals.map(g => `<div class="msbox" style="display:flex;gap:10px"><span style="color:#3f8f66">—</span><p style="margin:0">${esc(g)}</p></div>`).join('')}</div>
+    </section>`;
+
+  const secProblem = `
+    <section class="mssection" id="ms-problem"><div class="mstag">01 — The Problem</div>
+      <h3>${esc(B.problemIntro)}</h3>
+      <div class="mscardgrid" style="grid-template-columns:repeat(3,1fr)">${B.problems.map(([sev, h, b]) => `<div class="msbox">${pill(sev, sevColor(sev))}<h4 style="margin-top:8px">${esc(h)}</h4><p>${esc(b)}</p></div>`).join('')}</div>
+    </section>`;
+
+  const secPersonas = `
+    <section class="mssection" id="ms-personas"><div class="mstag">02 — Users &amp; Personas</div>
+      <h3>${esc(B.personasIntro)}</h3>
+      <div class="mscardgrid" style="grid-template-columns:repeat(3,1fr)">${B.personas.map(p => `<div class="msbox"><h4>${esc(p.initials)} · ${esc(p.name)}</h4>
+        <p style="color:#8a949c;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;margin:-4px 0 8px">${esc(p.context)}</p>
+        <div class="msq">${esc(p.quote)}</div>
+        <p style="margin-top:10px"><b style="color:#dfe4e8">Primary screen</b></p><p style="margin:0">${esc(p.screen)}</p>
+        <p style="margin-top:8px"><b style="color:#dfe4e8">Trust signal she/he wants</b></p><p style="margin:0">${esc(p.trust)}</p></div>`).join('')}</div>
+    </section>`;
+
+  const secGoals = `
+    <section class="mssection" id="ms-goals"><div class="mstag">03 — Goals &amp; Success Metrics</div>
+      <h3>${esc(B.goalsIntro)}</h3>
+      <div class="msoutstats" style="grid-template-columns:repeat(4,1fr)">${B.successMetrics.map(([v, l]) => `<div class="msoutstat"><div class="n">${esc(v)}</div><div class="l">${esc(l)}</div></div>`).join('')}</div>
+      ${sub('3.1', 'Research inputs')}
+      <table class="mstable"><tr><th>Input</th><th>Detail</th></tr>
+        ${B.researchInputs.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('')}</table>
+    </section>`;
+
+  const secIA = `
+    <section class="mssection" id="ms-ia"><div class="mstag">04 — Information Architecture</div>
+      <h3>${esc(B.iaIntro)}</h3>
+      <div class="mscardgrid" style="grid-template-columns:repeat(5,1fr)">${B.sitemap.map(([g, items]) => `<div class="msbox"><h4 style="font-size:11.5px;letter-spacing:.5px;color:#3f8f66">${esc(g)}</h4>
+        ${items.length ? `<ul>${items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>` : ''}</div>`).join('')}</div>
+      <p style="margin-top:14px">${esc(B.iaNote)}</p>
+    </section>`;
+
+  const secDecisions = `
+    <section class="mssection" id="ms-decisions"><div class="mstag">05 — Design Decisions</div>
+      <h3>Two calls that shaped the redesign</h3>
+      <p>${esc(B.decisionsIntro)}</p>
+      <div class="mslawgrid">${B.decisions.map(d => `<div class="mslaw"><div class="lsub">LAW</div><div class="lname">${esc(d.law)}</div>
+        <div class="lsub" style="margin-top:8px">INSIGHT</div><div class="ldef">${esc(d.insight)}</div>
+        <div class="lsub" style="margin-top:8px">GOAL</div><div class="ldef">${esc(d.goal)}</div>
+        <div class="lapp" style="margin-top:8px"><b>Problem →</b> ${esc(d.problem)}</div></div>`).join('')}</div>
+    </section>`;
+
+  const secScreens = `
+    <section class="mssection" id="ms-screens"><div class="mstag">06 — Screens</div>
+      <h3>Real screens, from the shipped Figma file</h3>
+      <p>${esc(B.screensIntro)}</p>
+      ${B.screenGroups.map((g, gi) => `${sub('6.' + (gi + 1), g.label)}
+        ${screenImgs(g.images.map(([k, cap]) => [IMG[k], cap]))}
+        <div class="mscardgrid two">${g.captions.map(([h, b]) => `<div class="msbox"><h4 style="font-size:12.5px">${esc(h)}</h4><p>${esc(b)}</p></div>`).join('')}</div>`).join('')}
+    </section>`;
+
+  const secDesign = `
+    <section class="mssection" id="ms-design"><div class="mstag">07 — Design System</div>
+      <h3>${esc(B.designIntro)}</h3>
+      <div class="mscardgrid" style="grid-template-columns:repeat(6,1fr)">${B.colors.map(([hex, label]) => `<div class="msbox" style="text-align:center;padding:10px">
+        <div style="width:100%;height:56px;border-radius:6px;background:${hex};border:1px solid #333;margin-bottom:8px"></div>
+        <p style="margin:0;font-size:10.5px;font-family:monospace">${esc(hex)}</p><p style="margin:2px 0 0;font-size:10.5px;color:#8a949c">${esc(label)}</p></div>`).join('')}</div>
+      ${sub('7.1', 'Typography')}
+      <table class="mstable"><tr><th>Style</th><th>Sample</th></tr>
+        ${B.typography.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('')}</table>
+    </section>`;
+
+  const secOutcomes = `
+    <section class="mssection" id="ms-outcomes"><div class="mstag">08 — Outcomes &amp; Impact</div>
+      <h3>What changed</h3>
+      <p>${esc(B.outcomesIntro)}</p>
+      <div class="msoutstats">${B.outcomeStats.map(([v, b]) => `<div class="msoutstat" style="text-align:left;padding:16px"><div class="n" style="font-size:20px">${esc(v)}</div><div class="l" style="font-size:11.5px;line-height:1.5">${esc(b)}</div></div>`).join('')}</div>
+      <div class="msquote"><b>${esc(B.outcomeQuote[1])}</b>${esc(B.outcomeQuote[0])}</div>
+    </section>`;
+
+  const secReflection = `
+    <section class="mssection" id="ms-reflection"><div class="mstag">09 — Reflection</div>
+      <h3>What I'd do differently</h3>
+      <div class="mscardgrid" style="grid-template-columns:repeat(3,1fr)">${B.reflectionCards.map(([h, b]) => `<div class="msbox"><h4>${esc(h)}</h4><p>${esc(b)}</p></div>`).join('')}</div>
+      <div class="msnote warn" style="margin-top:14px"><b>Portfolio note.</b> ${esc(B.honestyNote)}</div>
+    </section>`;
+
+  main.innerHTML = `<div class="pdetail mscase btcase">
+    <div class="mship"><img src="${BT_IMG_PATHS.BT_IMG_HERO}" alt="Betterment app screens" style="width:100%;display:block"></div>
+    <div class="mseyebrow">${esc(B.eyebrow)}</div>
+    <h1>${esc(B.title)}</h1>
+    <div class="mslede">${esc(B.lede)}</div>
+    <div class="msmetagrid">${B.meta.map(([k, v]) => `<div><b>${esc(k)}</b>${esc(v)}</div>`).join('')}</div>
+    <div class="prow" style="border-bottom:0;padding-bottom:0">
+      <button class="chip solid" type="button" data-go="contact">Ask me about it</button>
+      <button class="chip" type="button" data-like>${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} 1122</button>
+      <button class="chip" type="button" data-go="back">Back to all work</button>
+    </div>
+    <nav class="msnav">${btSectionsMeta.map(([id, label]) => `<span class="msnavb" data-jump="${id}">${esc(label)}</span>`).join('')}</nav>
+    ${secBrief}${secProblem}${secPersonas}${secGoals}${secIA}${secDecisions}${secScreens}${secDesign}${secOutcomes}${secReflection}
+    <div class="comments">
+      <h3>${BETTERMENT_COMMENTS.length} Comments</h3>
+      <div class="cmtbox"><span class="cav">${avaSvg(5, 'Y')}</span>
+        <input placeholder="Add a comment…" aria-label="Add a comment"></div>
+      <div id="cmts-${win.id}">${BETTERMENT_COMMENTS.map(([n, w, t, k], i) => `
+        <div class="cmt"><span class="cav">${avaSvg(i + 3, n[1].toUpperCase())}</span>
+          <div><div class="cn">${esc(n)}<span>${esc(w)}</span></div>
+          <div class="cb">${esc(t)}</div>
+          <div class="cact"><button type="button">${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} ${k}</button>
+            <button type="button">Reply</button></div></div></div>`).join('')}</div>
+    </div>
+  </div>`;
+
+  addr.value = 'https://www.myprojects.dev/betterment';
+  status.textContent = 'Done';
+  main.scrollTop = 0;
+  mountMsScale(main);
+  $('.cmtbox input', main).addEventListener('keydown', e => {
+    if (e.key !== 'Enter' || !e.target.value.trim()) return;
+    const box = $('#cmts-' + win.id);
+    box.insertAdjacentHTML('afterbegin', `<div class="cmt"><span class="cav">${avaSvg(5, 'Y')}</span>
+      <div><div class="cn">@you<span>just now</span></div><div class="cb">${esc(e.target.value.trim())}</div>
+      <div class="cact"><button type="button">0</button><button type="button">Reply</button></div></div></div>`);
+    e.target.value = ''; Snd.pop();
+  });
+}
+
 
 APPS.projects = {
   title: 'My Projects', icon: 'ie', w: 900, h: 600,
@@ -5911,6 +6195,7 @@ APPS.projects = {
       if (id === 'microsec') { renderMicrosecCaseStudy(main, addr, status, win); return; }
       if (id === 'smartpin') { renderSmartpinCaseStudy(main, addr, status, win); return; }
       if (id === 'agilecrm') { renderAgilecrmCaseStudy(main, addr, status, win); return; }
+      if (id === 'betterment') { renderBettermentCaseStudy(main, addr, status, win); return; }
       const p = PROJECTS.find(x => x.id === id); if (!p) return;
       win.state.view = id;
       main.innerHTML = `<div class="pdetail">
