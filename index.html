@@ -618,6 +618,15 @@ img{max-width:100%}
 .mscardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:14px}
 .mscardgrid.two{grid-template-columns:repeat(2,1fr)}
 .mscardgrid.four{grid-template-columns:repeat(4,1fr)}
+/* ---- Real screenshot display — responsive by construction: a portrait phone
+   capture and a wide dashboard capture both cap to a sane on-screen size
+   instead of stretching a narrow image to the full section width (which is
+   what made tall mobile screenshots blow up to several screen-heights tall). ---- */
+.msshotgrid{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px}
+.msshotcard{flex:0 1 auto;max-width:100%;border:1px solid #282828;border-radius:8px;overflow:hidden;
+  background:#0b0b0b;display:flex;align-items:center;justify-content:center}
+.site.light .msshotcard{background:#f3f4f1;border-color:#e2e2e2}
+.msshotcard img{display:block;max-width:100%;max-height:560px;width:auto;height:auto}
 .msbox{background:#161616;border:1px solid #282828;border-radius:8px;padding:12px 13px}
 .site.light .msbox{background:#f7f7f8;border-color:#e2e2e2}
 .msbox h4{font-size:12.5px;font-weight:700;margin:0 0 6px;color:#fff}
@@ -4467,7 +4476,7 @@ function renderMicrosecCaseStudy(main, addr, status, win) {
   const sub = (num, label) => `<div class="mssub">${esc(num)} · ${esc(label)}</div>`;
   const subhead = t => `<h4 style="font-size:14px;font-weight:600;color:#fff;margin:0 0 8px">${esc(t)}</h4>`;
   const annoGrid = arr => `<div class="mscardgrid four">${arr.map(([l, b]) => `<div class="msnote" style="margin:0"><b style="display:block;margin-bottom:4px;text-transform:uppercase;font-size:10px;letter-spacing:.5px">${esc(l)}</b>${esc(b)}</div>`).join('')}</div>`;
-  const screenImgs = imgs => imgs.map(([src, cap]) => `<div style="border:1px solid #282828;border-radius:8px;overflow:hidden;background:#0b0b0b;margin-bottom:10px"><img src="${src}" alt="${esc(cap)}" style="width:100%;display:block"></div>`).join('');
+  const screenImgs = imgs => `<div class="msshotgrid">${imgs.map(([src, cap]) => `<div class="msshotcard"><img src="${src}" alt="${esc(cap)}" loading="lazy"></div>`).join('')}</div>`;
 
   const secBrief = `
     <section class="mssection" id="ms-brief"><div class="mstag">00 — Brief</div>
@@ -5591,7 +5600,7 @@ function renderAgilecrmCaseStudy(main, addr, status, win) {
   const pill = (text, color) => `<span style="display:inline-block;border:1px solid ${color};color:${color};border-radius:20px;padding:2px 10px;font-size:10px;white-space:nowrap">${esc(text)}</span>`;
   const sub = (num, label) => `<div class="mssub">${esc(num)} · ${esc(label)}</div>`;
   const subhead = t => `<h4 style="font-size:14px;font-weight:600;color:#fff;margin:0 0 8px">${esc(t)}</h4>`;
-  const screenImgs = imgs => imgs.map(([src, cap]) => `<div style="border:1px solid #282828;border-radius:8px;overflow:hidden;background:#0b0b0b;margin-bottom:10px"><img src="${src}" alt="${esc(cap)}" style="width:100%;display:block"></div>`).join('');
+  const screenImgs = imgs => `<div class="msshotgrid">${imgs.map(([src, cap]) => `<div class="msshotcard"><img src="${src}" alt="${esc(cap)}" loading="lazy"></div>`).join('')}</div>`;
   const IMG = AG_IMG_PATHS;
 
   const secBrief = `
@@ -5915,7 +5924,7 @@ function renderBettermentCaseStudy(main, addr, status, win) {
   const subhead = t => `<h4 style="font-size:14px;font-weight:600;color:#fff;margin:0 0 8px">${esc(t)}</h4>`;
   const pill = (text, color) => `<span style="display:inline-block;border:1px solid ${color};color:${color};border-radius:20px;padding:2px 10px;font-size:10px;white-space:nowrap">${esc(text)}</span>`;
   const sevColor = s => s === 'HIGH' ? '#c0594a' : '#b98a3b';
-  const screenImgs = imgs => imgs.map(([src, cap]) => `<div style="border:1px solid #282828;border-radius:8px;overflow:hidden;background:#0b0b0b;margin-bottom:10px"><img src="${src}" alt="${esc(cap)}" style="width:100%;display:block"></div>`).join('');
+  const screenImgs = imgs => `<div class="msshotgrid">${imgs.map(([src, cap]) => `<div class="msshotcard"><img src="${src}" alt="${esc(cap)}" loading="lazy"></div>`).join('')}</div>`;
 
   const secBrief = `
     <section class="mssection" id="ms-brief"><div class="mstag">00 — Brief</div>
