@@ -627,6 +627,17 @@ img{max-width:100%}
   background:#0b0b0b;display:flex;align-items:center;justify-content:center}
 .site.light .msshotcard{background:#f3f4f1;border-color:#e2e2e2}
 .msshotcard img{display:block;max-width:100%;max-height:560px;width:auto;height:auto}
+
+/* ---- Screenshot + annotation row — puts the write-up beside a narrow phone
+   capture instead of below it, so a 150-260px-wide screenshot doesn't leave a
+   tall dead-space gap before the annotation cards start on the next line.
+   Purely flex/grid driven: a wide dashboard capture that already fills the
+   row simply pushes the annotations to wrap below, full width, on its own. ---- */
+.msscreenrow{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;margin-bottom:14px}
+.msscreenrow > .msshotgrid{margin-bottom:0}
+.msscreenrow > .msannocol{flex:1 1 260px;min-width:220px;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;align-content:start}
+.msscreenrow > .msannocol > .msbox,.msscreenrow > .msannocol > .msnote{margin:0}
 .msbox{background:#161616;border:1px solid #282828;border-radius:8px;padding:12px 13px}
 .site.light .msbox{background:#f7f7f8;border-color:#e2e2e2}
 .msbox h4{font-size:12.5px;font-weight:700;margin:0 0 6px;color:#fff}
@@ -723,6 +734,13 @@ img{max-width:100%}
 .spcase .msquote{border-left-color:#149c8e}
 .spcase .msquote b{color:#149c8e}
 .spcase .mscard:hover .msthumbwrap{outline-color:#149c8e}
+.spcase .spamark{background:#149c8e}
+.spcase .spalink.on{background:#149c8e1f;border-left-color:#149c8e}
+.site.light .spcase .spalink.on{background:#e2f5f1}
+.spcase .spalink.on .n{color:#3fcab6}
+.site.light .spcase .spalink.on .n{color:#149c8e}
+.spcase .spalink.on .l{color:#5be0cc}
+.site.light .spcase .spalink.on .l{color:#0b6f65}
 
 /* ---- AgileCRM case study accent override — amber, distinct from
    MicroSec's cyan and Smartpin's teal ---- */
@@ -734,6 +752,13 @@ img{max-width:100%}
 .agcase .msquote{border-left-color:#e2a53f}
 .agcase .msquote b{color:#e2a53f}
 .agcase .mscard:hover .msthumbwrap{outline-color:#e2a53f}
+.agcase .spamark{background:#e2a53f}
+.agcase .spalink.on{background:#e2a53f1f;border-left-color:#e2a53f}
+.site.light .agcase .spalink.on{background:#faf1de}
+.agcase .spalink.on .n{color:#f0c675}
+.site.light .agcase .spalink.on .n{color:#e2a53f}
+.agcase .spalink.on .l{color:#f5dcae}
+.site.light .agcase .spalink.on .l{color:#8a5f10}
 
 /* ---- Betterment case study accent override — moss green, distinct from
    MicroSec's cyan, Smartpin's teal and AgileCRM's amber ---- */
@@ -745,6 +770,13 @@ img{max-width:100%}
 .btcase .msquote{border-left-color:#3f8f66}
 .btcase .msquote b{color:#3f8f66}
 .btcase .mscard:hover .msthumbwrap{outline-color:#3f8f66}
+.btcase .spamark{background:#3f8f66}
+.btcase .spalink.on{background:#3f8f661f;border-left-color:#3f8f66}
+.site.light .btcase .spalink.on{background:#eef6f0}
+.btcase .spalink.on .n{color:#6fc79a}
+.site.light .btcase .spalink.on .n{color:#3f8f66}
+.btcase .spalink.on .l{color:#9edcbb}
+.site.light .btcase .spalink.on .l{color:#2c6146}
 
 /* ---- Smartpin §07 Screens — real Figma screenshots, full annotation cards ---- */
 .spcase .spscreen-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
@@ -764,14 +796,14 @@ img{max-width:100%}
 
 /* ---- Smartpin "exact" layout — left sidebar TOC, matching the Figma file's
    Aside component pixel-for-pixel (logo mark, numbered nav, meta block) ---- */
-.spcase.spside{max-width:1120px}
+.spside{max-width:1120px}
 .spwrap{display:flex;flex-wrap:wrap;align-items:flex-start;gap:0}
 .spaside{flex:0 0 208px;min-width:180px;position:sticky;top:0;align-self:flex-start;
   display:flex;flex-direction:column;gap:20px;background:#141414;border:1px solid #282828;border-radius:10px;
   padding:20px 14px 22px 18px;margin:0 18px 18px 0}
 .site.light .spaside{background:#fff;border-color:#e6e8e3}
 .spabrand{display:flex;align-items:center;gap:8px}
-.spamark{width:22px;height:22px;flex:0 0 22px;border-radius:7px;background:#149c8e;display:flex;align-items:center;justify-content:center}
+.spamark{width:22px;height:22px;flex:0 0 22px;border-radius:7px;background:#25aee4;display:flex;align-items:center;justify-content:center}
 .spamark i{width:10px;height:10px;border-radius:5px;background:#fff;display:block}
 .spawordmark b{display:block;font-family:var(--font-disp);font-weight:700;font-size:14px;color:#eef1ee;letter-spacing:-.2px}
 .site.light .spawordmark b{color:#15181c}
@@ -783,12 +815,12 @@ img{max-width:100%}
 .spalink .l{color:#9aa4ad}
 .spalink:hover{background:#1c1c1c}
 .site.light .spalink:hover{background:#f4f4f4}
-.spalink.on{background:#149c8e1f;border-left-color:#149c8e}
-.site.light .spalink.on{background:#e2f5f1}
-.spalink.on .n{color:#3fcab6}
-.site.light .spalink.on .n{color:#149c8e}
-.spalink.on .l{color:#5be0cc}
-.site.light .spalink.on .l{color:#0b6f65}
+.spalink.on{background:#25aee41f;border-left-color:#25aee4}
+.site.light .spalink.on{background:#e3f4fb}
+.spalink.on .n{color:#5cc9f5}
+.site.light .spalink.on .n{color:#25aee4}
+.spalink.on .l{color:#8fdcf7}
+.site.light .spalink.on .l{color:#1a4a5c}
 .spameta{border-top:1px solid #282828;padding-top:12px;font-family:var(--font-mono);font-size:9.8px;line-height:1.75;color:#7c8894}
 .site.light .spameta{border-top-color:#e6e8e3;color:#93989e}
 .spmain{flex:1 1 460px;min-width:0}
@@ -4475,7 +4507,7 @@ function renderMicrosecCaseStudy(main, addr, status, win) {
   const catColor = c => ({ Perception: '#25aee4', Cognition: '#c084fc', Interaction: '#3ecf74', Heuristic: '#e9a324' })[c] || '#6b6b6b';
   const sub = (num, label) => `<div class="mssub">${esc(num)} · ${esc(label)}</div>`;
   const subhead = t => `<h4 style="font-size:14px;font-weight:600;color:#fff;margin:0 0 8px">${esc(t)}</h4>`;
-  const annoGrid = arr => `<div class="mscardgrid four">${arr.map(([l, b]) => `<div class="msnote" style="margin:0"><b style="display:block;margin-bottom:4px;text-transform:uppercase;font-size:10px;letter-spacing:.5px">${esc(l)}</b>${esc(b)}</div>`).join('')}</div>`;
+  const annoGrid = arr => arr.map(([l, b]) => `<div class="msnote" style="margin:0"><b style="display:block;margin-bottom:4px;text-transform:uppercase;font-size:10px;letter-spacing:.5px">${esc(l)}</b>${esc(b)}</div>`).join('');
   const screenImgs = imgs => `<div class="msshotgrid">${imgs.map(([src, cap]) => `<div class="msshotcard"><img src="${src}" alt="${esc(cap)}" loading="lazy"></div>`).join('')}</div>`;
 
   const secBrief = `
@@ -4574,8 +4606,10 @@ function renderMicrosecCaseStudy(main, addr, status, win) {
       <h3>Real screens, annotated</h3>
       <p>${esc(M.screensIntro)}</p>
       ${M.screenGroups.map(g => `${sub(g.label.split(' · ')[0], g.label.split(' · ')[1])}${subhead(g.heading)}
-        ${screenImgs(g.images)}
-        ${annoGrid(g.annotations)}`).join('')}
+        <div class="msscreenrow">
+          ${screenImgs(g.images)}
+          <div class="msannocol">${annoGrid(g.annotations)}</div>
+        </div>`).join('')}
     </section>`;
 
   const secIllus = `
@@ -4630,29 +4664,38 @@ function renderMicrosecCaseStudy(main, addr, status, win) {
       <div class="msnote warn"><b>Portfolio note.</b> ${esc(M.honestyNote)}</div>
     </section>`;
 
-  main.innerHTML = `<div class="pdetail mscase">
-    <div class="mship"><div class="msthumbwrap" style="height:auto"><div class="msinner">${MS_SCREENS[0].render()}</div></div></div>
-    <div class="mseyebrow">${esc(M.eyebrow)}</div>
-    <h1>${esc(M.title)}</h1>
-    <div class="mslede">${esc(M.lede)}</div>
-    <div class="msmetagrid">${M.meta.map(([k, v]) => `<div><b>${esc(k)}</b>${esc(v)}</div>`).join('')}</div>
-    <div class="prow" style="border-bottom:0;padding-bottom:0">
-      <button class="chip solid" type="button" data-go="contact">Ask me about it</button>
-      <button class="chip" type="button" data-like>${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} 2146</button>
-      <button class="chip" type="button" data-go="back">Back to all work</button>
-    </div>
-    <nav class="msnav">${msSectionsMeta.map(([id, label]) => `<span class="msnavb" data-jump="${id}">${esc(label)}</span>`).join('')}</nav>
-    ${secBrief}${secDiscovery}${secSynthesis}${secFraming}${secIA}${secLaws}${secInteraction}${secScreens}${secIllus}${secEval}${secOutcomes}${secReflection}
-    <div class="comments">
-      <h3>${MICROSEC_COMMENTS.length} Comments</h3>
-      <div class="cmtbox"><span class="cav">${avaSvg(5, 'Y')}</span>
-        <input placeholder="Add a comment…" aria-label="Add a comment"></div>
-      <div id="cmts-${win.id}">${MICROSEC_COMMENTS.map(([n, w, t, k], i) => `
-        <div class="cmt"><span class="cav">${avaSvg(i + 3, n[1].toUpperCase())}</span>
-          <div><div class="cn">${esc(n)}<span>${esc(w)}</span></div>
-          <div class="cb">${esc(t)}</div>
-          <div class="cact"><button type="button">${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} ${k}</button>
-            <button type="button">Reply</button></div></div></div>`).join('')}</div>
+  main.innerHTML = `<div class="pdetail mscase spside">
+    <div class="spwrap">
+      <aside class="spaside">
+        <div class="spabrand"><span class="spamark"><i></i></span>
+          <div class="spawordmark"><b>MicroSec</b><span>UX Case Study</span></div></div>
+        <nav class="spanav">${msSectionsMeta.map(([id, label], i) => `<span class="spalink${i === 0 ? ' on' : ''}" data-jump="${id}" data-secnum="${id}"><span class="n">${String(i).padStart(2, '0')}</span><span class="l">${esc(label)}</span></span>`).join('')}</nav>
+        <div class="spameta">${M.meta.slice(0, 4).map(([k, v]) => `${esc(k)}: ${esc(v)}`).join('<br>')}</div>
+      </aside>
+      <div class="spmain">
+        <div class="mship"><div class="msthumbwrap" style="height:auto"><div class="msinner">${MS_SCREENS[0].render()}</div></div></div>
+        <div class="mseyebrow">${esc(M.eyebrow)}</div>
+        <h1>${esc(M.title)}</h1>
+        <div class="mslede">${esc(M.lede)}</div>
+        <div class="msmetagrid">${M.meta.map(([k, v]) => `<div><b>${esc(k)}</b>${esc(v)}</div>`).join('')}</div>
+        <div class="prow" style="border-bottom:0;padding-bottom:0">
+          <button class="chip solid" type="button" data-go="contact">Ask me about it</button>
+          <button class="chip" type="button" data-like>${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} 2146</button>
+          <button class="chip" type="button" data-go="back">Back to all work</button>
+        </div>
+        ${secBrief}${secDiscovery}${secSynthesis}${secFraming}${secIA}${secLaws}${secInteraction}${secScreens}${secIllus}${secEval}${secOutcomes}${secReflection}
+        <div class="comments">
+          <h3>${MICROSEC_COMMENTS.length} Comments</h3>
+          <div class="cmtbox"><span class="cav">${avaSvg(5, 'Y')}</span>
+            <input placeholder="Add a comment…" aria-label="Add a comment"></div>
+          <div id="cmts-${win.id}">${MICROSEC_COMMENTS.map(([n, w, t, k], i) => `
+            <div class="cmt"><span class="cav">${avaSvg(i + 3, n[1].toUpperCase())}</span>
+              <div><div class="cn">${esc(n)}<span>${esc(w)}</span></div>
+              <div class="cb">${esc(t)}</div>
+              <div class="cact"><button type="button">${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} ${k}</button>
+                <button type="button">Reply</button></div></div></div>`).join('')}</div>
+        </div>
+      </div>
     </div>
   </div>`;
 
@@ -4668,6 +4711,20 @@ function renderMicrosecCaseStudy(main, addr, status, win) {
       <div class="cact"><button type="button">0</button><button type="button">Reply</button></div></div></div>`);
     e.target.value = ''; Snd.pop();
   });
+
+  /* scroll-spy — highlight the sidebar link for the section in view */
+  const msSpLinks = $$('.spalink', main);
+  if (msSpLinks.length) {
+    const msSpObserver = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const id = en.target.id.replace(/^ms-/, '');
+        msSpLinks.forEach(l => l.classList.toggle('on', l.dataset.secnum === id));
+      });
+    }, { root: main, rootMargin: '-10% 0px -75% 0px', threshold: 0 });
+    $$('.mssection', main).forEach(sec => msSpObserver.observe(sec));
+    win.__spObserver = msSpObserver;
+  }
 }
 
 
@@ -5715,8 +5772,10 @@ function renderAgilecrmCaseStudy(main, addr, status, win) {
       <h3>Real screens, from the shipped Figma file</h3>
       <p>${esc(A.screensIntro)}</p>
       ${A.screenGroups.map((g, gi) => `${sub('9.' + (gi + 1), g.label)}
-        ${screenImgs(g.images.map(([k, cap]) => [IMG[k], cap]))}
-        <div class="mscardgrid two">${g.captions.map(([h, b]) => `<div class="msbox"><h4 style="font-size:12.5px">${esc(h)}</h4><p>${esc(b)}</p></div>`).join('')}</div>`).join('')}
+        <div class="msscreenrow">
+          ${screenImgs(g.images.map(([k, cap]) => [IMG[k], cap]))}
+          <div class="msannocol">${g.captions.map(([h, b]) => `<div class="msbox"><h4 style="font-size:12.5px">${esc(h)}</h4><p>${esc(b)}</p></div>`).join('')}</div>
+        </div>`).join('')}
     </section>`;
 
   const secFeature = `
@@ -5755,29 +5814,38 @@ function renderAgilecrmCaseStudy(main, addr, status, win) {
       <div class="msnote warn" style="margin-top:14px"><b>Portfolio note.</b> ${esc(A.honestyNote)}</div>
     </section>`;
 
-  main.innerHTML = `<div class="pdetail mscase agcase">
-    <div class="mship"><img src="${AG_IMG_PATHS.AG_IMG_DASH}" alt="AgileCRM dashboard" style="width:100%;display:block"></div>
-    <div class="mseyebrow">${esc(A.eyebrow)}</div>
-    <h1>${esc(A.title)}</h1>
-    <div class="mslede">${esc(A.lede)}</div>
-    <div class="msmetagrid">${A.meta.map(([k, v]) => `<div><b>${esc(k)}</b>${esc(v)}</div>`).join('')}</div>
-    <div class="prow" style="border-bottom:0;padding-bottom:0">
-      <button class="chip solid" type="button" data-go="contact">Ask me about it</button>
-      <button class="chip" type="button" data-like>${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} 1584</button>
-      <button class="chip" type="button" data-go="back">Back to all work</button>
-    </div>
-    <nav class="msnav">${agSectionsMeta.map(([id, label]) => `<span class="msnavb" data-jump="${id}">${esc(label)}</span>`).join('')}</nav>
-    ${secBrief}${secDiscovery}${secCompetitive}${secPersonas}${secFraming}${secIA}${secDecisions}${secIdeation}${secMotion}${secScreens}${secFeature}${secOutcomes}${secTesting}${secReflection}
-    <div class="comments">
-      <h3>${AGILECRM_COMMENTS.length} Comments</h3>
-      <div class="cmtbox"><span class="cav">${avaSvg(5, 'Y')}</span>
-        <input placeholder="Add a comment…" aria-label="Add a comment"></div>
-      <div id="cmts-${win.id}">${AGILECRM_COMMENTS.map(([n, w, t, k], i) => `
-        <div class="cmt"><span class="cav">${avaSvg(i + 3, n[1].toUpperCase())}</span>
-          <div><div class="cn">${esc(n)}<span>${esc(w)}</span></div>
-          <div class="cb">${esc(t)}</div>
-          <div class="cact"><button type="button">${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} ${k}</button>
-            <button type="button">Reply</button></div></div></div>`).join('')}</div>
+  main.innerHTML = `<div class="pdetail mscase agcase spside">
+    <div class="spwrap">
+      <aside class="spaside">
+        <div class="spabrand"><span class="spamark"><i></i></span>
+          <div class="spawordmark"><b>AgileCRM</b><span>UX Case Study</span></div></div>
+        <nav class="spanav">${agSectionsMeta.map(([id, label], i) => `<span class="spalink${i === 0 ? ' on' : ''}" data-jump="${id}" data-secnum="${id}"><span class="n">${String(i).padStart(2, '0')}</span><span class="l">${esc(label)}</span></span>`).join('')}</nav>
+        <div class="spameta">${A.meta.slice(0, 4).map(([k, v]) => `${esc(k)}: ${esc(v)}`).join('<br>')}</div>
+      </aside>
+      <div class="spmain">
+        <div class="mship"><img src="${AG_IMG_PATHS.AG_IMG_DASH}" alt="AgileCRM dashboard" style="width:100%;display:block"></div>
+        <div class="mseyebrow">${esc(A.eyebrow)}</div>
+        <h1>${esc(A.title)}</h1>
+        <div class="mslede">${esc(A.lede)}</div>
+        <div class="msmetagrid">${A.meta.map(([k, v]) => `<div><b>${esc(k)}</b>${esc(v)}</div>`).join('')}</div>
+        <div class="prow" style="border-bottom:0;padding-bottom:0">
+          <button class="chip solid" type="button" data-go="contact">Ask me about it</button>
+          <button class="chip" type="button" data-like>${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} 1584</button>
+          <button class="chip" type="button" data-go="back">Back to all work</button>
+        </div>
+        ${secBrief}${secDiscovery}${secCompetitive}${secPersonas}${secFraming}${secIA}${secDecisions}${secIdeation}${secMotion}${secScreens}${secFeature}${secOutcomes}${secTesting}${secReflection}
+        <div class="comments">
+          <h3>${AGILECRM_COMMENTS.length} Comments</h3>
+          <div class="cmtbox"><span class="cav">${avaSvg(5, 'Y')}</span>
+            <input placeholder="Add a comment…" aria-label="Add a comment"></div>
+          <div id="cmts-${win.id}">${AGILECRM_COMMENTS.map(([n, w, t, k], i) => `
+            <div class="cmt"><span class="cav">${avaSvg(i + 3, n[1].toUpperCase())}</span>
+              <div><div class="cn">${esc(n)}<span>${esc(w)}</span></div>
+              <div class="cb">${esc(t)}</div>
+              <div class="cact"><button type="button">${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} ${k}</button>
+                <button type="button">Reply</button></div></div></div>`).join('')}</div>
+        </div>
+      </div>
     </div>
   </div>`;
 
@@ -5793,6 +5861,20 @@ function renderAgilecrmCaseStudy(main, addr, status, win) {
       <div class="cact"><button type="button">0</button><button type="button">Reply</button></div></div></div>`);
     e.target.value = ''; Snd.pop();
   });
+
+  /* scroll-spy — highlight the sidebar link for the section in view */
+  const agSpLinks = $$('.spalink', main);
+  if (agSpLinks.length) {
+    const agSpObserver = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const id = en.target.id.replace(/^ms-/, '');
+        agSpLinks.forEach(l => l.classList.toggle('on', l.dataset.secnum === id));
+      });
+    }, { root: main, rootMargin: '-10% 0px -75% 0px', threshold: 0 });
+    $$('.mssection', main).forEach(sec => agSpObserver.observe(sec));
+    win.__spObserver = agSpObserver;
+  }
 }
 
 const BT_IMG_PATHS = {
@@ -5983,8 +6065,10 @@ function renderBettermentCaseStudy(main, addr, status, win) {
       <h3>Real screens, from the shipped Figma file</h3>
       <p>${esc(B.screensIntro)}</p>
       ${B.screenGroups.map((g, gi) => `${sub('6.' + (gi + 1), g.label)}
-        ${screenImgs(g.images.map(([k, cap]) => [IMG[k], cap]))}
-        <div class="mscardgrid two">${g.captions.map(([h, b]) => `<div class="msbox"><h4 style="font-size:12.5px">${esc(h)}</h4><p>${esc(b)}</p></div>`).join('')}</div>`).join('')}
+        <div class="msscreenrow">
+          ${screenImgs(g.images.map(([k, cap]) => [IMG[k], cap]))}
+          <div class="msannocol">${g.captions.map(([h, b]) => `<div class="msbox"><h4 style="font-size:12.5px">${esc(h)}</h4><p>${esc(b)}</p></div>`).join('')}</div>
+        </div>`).join('')}
     </section>`;
 
   const secDesign = `
@@ -6013,29 +6097,38 @@ function renderBettermentCaseStudy(main, addr, status, win) {
       <div class="msnote warn" style="margin-top:14px"><b>Portfolio note.</b> ${esc(B.honestyNote)}</div>
     </section>`;
 
-  main.innerHTML = `<div class="pdetail mscase btcase">
-    <div class="mship"><img src="${BT_IMG_PATHS.BT_IMG_HERO}" alt="Betterment app screens" style="width:100%;display:block"></div>
-    <div class="mseyebrow">${esc(B.eyebrow)}</div>
-    <h1>${esc(B.title)}</h1>
-    <div class="mslede">${esc(B.lede)}</div>
-    <div class="msmetagrid">${B.meta.map(([k, v]) => `<div><b>${esc(k)}</b>${esc(v)}</div>`).join('')}</div>
-    <div class="prow" style="border-bottom:0;padding-bottom:0">
-      <button class="chip solid" type="button" data-go="contact">Ask me about it</button>
-      <button class="chip" type="button" data-like>${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} 1122</button>
-      <button class="chip" type="button" data-go="back">Back to all work</button>
-    </div>
-    <nav class="msnav">${btSectionsMeta.map(([id, label]) => `<span class="msnavb" data-jump="${id}">${esc(label)}</span>`).join('')}</nav>
-    ${secBrief}${secProblem}${secPersonas}${secGoals}${secIA}${secDecisions}${secScreens}${secDesign}${secOutcomes}${secReflection}
-    <div class="comments">
-      <h3>${BETTERMENT_COMMENTS.length} Comments</h3>
-      <div class="cmtbox"><span class="cav">${avaSvg(5, 'Y')}</span>
-        <input placeholder="Add a comment…" aria-label="Add a comment"></div>
-      <div id="cmts-${win.id}">${BETTERMENT_COMMENTS.map(([n, w, t, k], i) => `
-        <div class="cmt"><span class="cav">${avaSvg(i + 3, n[1].toUpperCase())}</span>
-          <div><div class="cn">${esc(n)}<span>${esc(w)}</span></div>
-          <div class="cb">${esc(t)}</div>
-          <div class="cact"><button type="button">${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} ${k}</button>
-            <button type="button">Reply</button></div></div></div>`).join('')}</div>
+  main.innerHTML = `<div class="pdetail mscase btcase spside">
+    <div class="spwrap">
+      <aside class="spaside">
+        <div class="spabrand"><span class="spamark"><i></i></span>
+          <div class="spawordmark"><b>Betterment</b><span>UX Case Study</span></div></div>
+        <nav class="spanav">${btSectionsMeta.map(([id, label], i) => `<span class="spalink${i === 0 ? ' on' : ''}" data-jump="${id}" data-secnum="${id}"><span class="n">${String(i).padStart(2, '0')}</span><span class="l">${esc(label)}</span></span>`).join('')}</nav>
+        <div class="spameta">${B.meta.slice(0, 4).map(([k, v]) => `${esc(k)}: ${esc(v)}`).join('<br>')}</div>
+      </aside>
+      <div class="spmain">
+        <div class="mship"><img src="${BT_IMG_PATHS.BT_IMG_HERO}" alt="Betterment app screens" style="width:100%;display:block"></div>
+        <div class="mseyebrow">${esc(B.eyebrow)}</div>
+        <h1>${esc(B.title)}</h1>
+        <div class="mslede">${esc(B.lede)}</div>
+        <div class="msmetagrid">${B.meta.map(([k, v]) => `<div><b>${esc(k)}</b>${esc(v)}</div>`).join('')}</div>
+        <div class="prow" style="border-bottom:0;padding-bottom:0">
+          <button class="chip solid" type="button" data-go="contact">Ask me about it</button>
+          <button class="chip" type="button" data-like>${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} 1122</button>
+          <button class="chip" type="button" data-go="back">Back to all work</button>
+        </div>
+        ${secBrief}${secProblem}${secPersonas}${secGoals}${secIA}${secDecisions}${secScreens}${secDesign}${secOutcomes}${secReflection}
+        <div class="comments">
+          <h3>${BETTERMENT_COMMENTS.length} Comments</h3>
+          <div class="cmtbox"><span class="cav">${avaSvg(5, 'Y')}</span>
+            <input placeholder="Add a comment…" aria-label="Add a comment"></div>
+          <div id="cmts-${win.id}">${BETTERMENT_COMMENTS.map(([n, w, t, k], i) => `
+            <div class="cmt"><span class="cav">${avaSvg(i + 3, n[1].toUpperCase())}</span>
+              <div><div class="cn">${esc(n)}<span>${esc(w)}</span></div>
+              <div class="cb">${esc(t)}</div>
+              <div class="cact"><button type="button">${SVG('<path d="M12 20h6l8-12c3 0 5 2 5 5l-2 7h9c2 0 4 2 3 4l-4 12c0 2-2 3-4 3H12Z" fill="currentColor"/>')} ${k}</button>
+                <button type="button">Reply</button></div></div></div>`).join('')}</div>
+        </div>
+      </div>
     </div>
   </div>`;
 
@@ -6051,6 +6144,20 @@ function renderBettermentCaseStudy(main, addr, status, win) {
       <div class="cact"><button type="button">0</button><button type="button">Reply</button></div></div></div>`);
     e.target.value = ''; Snd.pop();
   });
+
+  /* scroll-spy — highlight the sidebar link for the section in view */
+  const btSpLinks = $$('.spalink', main);
+  if (btSpLinks.length) {
+    const btSpObserver = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const id = en.target.id.replace(/^ms-/, '');
+        btSpLinks.forEach(l => l.classList.toggle('on', l.dataset.secnum === id));
+      });
+    }, { root: main, rootMargin: '-10% 0px -75% 0px', threshold: 0 });
+    $$('.mssection', main).forEach(sec => btSpObserver.observe(sec));
+    win.__spObserver = btSpObserver;
+  }
 }
 
 
